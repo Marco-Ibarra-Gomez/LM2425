@@ -10,4 +10,4 @@ Primer tema: Markdown. Nos interesa conocer lo siguiente:
 1. Extensión de los archivos Markdown (.md)
 2. Cómo escribir títulos y subtítulos
 3. Cómo crear listas no numeradas y numeradas
-4. Como poner un enlace como [este](htts://markdown.es/sintaxis-markdown/#links)
+4. Como poner un enlace como [este](https://markdown.es/sintaxis-markdown/#links)
