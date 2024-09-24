@@ -1,2 +1,2 @@
-# Repositorio de Lenguaje de Marcas
-## Autor: Marco Ibarra
+# Repositorio de Lenguaje de Marcas 2024-25
+## Autor: Marco Ibarra Gómez
