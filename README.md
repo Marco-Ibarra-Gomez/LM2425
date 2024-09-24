@@ -1,1 +1,2 @@
-# LM2425
+# Repositorio de Lenguaje de Marcas
+## Autor: Marco Ibarra
