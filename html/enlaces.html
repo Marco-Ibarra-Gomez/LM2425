@@ -6,6 +6,45 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header style="text-align: center;">
+        <h1>Tipos de enlaces</h1>
+        <hr>
+    </header>
+    <main>
+        <section>
+            <h2>Enlace mediante texto</h2>
+            <p>Sintaxis: &lt;a href="url">Texto a linkear&lt;/a&gt;</p>
+            <p>Ejemplo: <a target="_blank" href="https://www.microsoft.com/es-es">Link a una página</a></p>
+        </section>
+        <br><br>
+        <section>
+            <h2>Enlaces mediante Imagenes</h2>
+            <p>Sintaxis: &lt;a href="url">&lt;img src="URL" alt=""&gt;&lt;/a&gt;</p>
+            <p>Ejemplo:</p>
+            <figure>
+                <a href="https://www.w3schools.com/html/html_attributes.asp" target="_blank"><img src="https://cdn.pixabay.com/photo/2023/09/16/18/18/wallpaper-8257343_640.png" alt="fondo con arboles"></a>
+            </figure>
+        </section>
+        <br><br>
+        <section>
+            <h2>Enlace a la dirección de un correo</h2>
+            <p>Sintaxis: &lt;a href="mailto:correo@gmail.com">Enviar mail&lt;/a&gt;</p>
+            <p>Ejemplo:</p>
+            <a href="mailto:marcoantonioibarra03@iesamachado.org">Enviar email a mi correo del grado</a>
+        </section>
+        <br><br>
+        <section>
+            <h2>Breve descripción que aparece al pasar el puntero sobre el link</h2>
+            <p>Sintaxis: &lt;a href="url" title="Descripción">Texto a linkear&lt;/a&gt;</p>
+            <p>Ejemplo: <a target="_blank" href="https://www.microsoft.com/es-es" title="Link a la página de Microsoft">Link a una página</a></p>
+        </section>
+        <br><br>
+        <section>
+            <h2>Botón de Javascript como un link</h2>
+            <p>Este es un poco más complejo puesto que usa un poco de Javascript</p>
+            <p>Sintaxis: &lt;button onclick="document.location='url'">Botón a linkear&lt;/a&gt;</p>
+            <p>Ejemplo: <button onclick="window.open('https://www.microsoft.com/es-es', '_blank')">Link a la web</button></p>
+        </section>
+    </main>
 </body>
 </html>
