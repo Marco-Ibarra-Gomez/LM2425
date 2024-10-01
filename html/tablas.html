@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+<body>
+    <h1>Tablas</h1>
+    <p>Una tabla permite la distribución de la información organizada
+       por filas (rows) y columnas (cols).
+       Se utiliza la etiqueta html de nombre <i>table</i>
+       Ejemplo:
+    </p>
+    <table style="border: 1px solid black;">
+        <tr>
+            <td>Elemento 1</td>
+            <td>Elemento 2</td>
+            <td>Elemento 3</td>
+            <td>Elemento 4</td>
+        </tr>
+        <tr>
+            <td>Elemento 5</td>
+            <td>Elemento 6</td>
+            <td>Elemento 7</td>
+            <td>Elemento 8</td>
+        </tr>
+    </table>
+    <h2>Problemas...</h2>
+    <p>Vamos a experimentar problemas cuando el número de columnas no sea el mismo 
+        en todas las filas. Lo siguiente está mal... Ejemplo:
+    </p>
+    <table style="border: 1px solid black;">
+        <tr>
+            <td>Elemento 1</td>
+            <td>Elemento 2</td>
+        </tr>
+        <tr>
+            <td>Elemento 5</td>
+            <td>Elemento 6</td>
+            <td>Elemento 7</td>
+            <td>Elemento 8</td>
+        </tr>
+    </table>
+    <h2>Soluciones</h2>
+    <p>Si deseamos que una celda ocupe más de una columna o fila utilizaremos las propiedades colspan o rowspan. Ejemplo:</p>
+    <table border="1">
+        <tr>
+            <td colspan="2">Elemento 1</td>
+            <td colspan="2">Elemento 2</td>
+        </tr>
+        <tr>
+            <td>Elemento 5</td>
+            <td>Elemento 6</td>
+            <td>Elemento 7</td>
+            <td>Elemento 8</td>
+        </tr>
+    </table>
+    <p>Otro ejemplo ahora con una celda que ocupa dos filas. Ejemplo:</p>
+    <table border="1">
+        <tr>
+            <td rowspan="2">Elemento 1</td>
+            <td>Elemento 2</td>
+        </tr>
+        <tr>
+            <td>Elemento 5</td>
+            <td>Elemento 6</td>
+            <td>Elemento 7</td>
+            <td>Elemento 8</td>
+        </tr>
+    </table>
+</body>
+</html>
