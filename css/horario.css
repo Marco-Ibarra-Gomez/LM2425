@@ -1,0 +1,23 @@
+body{
+    background-image: url(/imagenes/fondo\ horario.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 800px;
+    height: 40px;
+    text-align: center;
+}
+h1, h2, p{
+    margin-left: auto;
+    padding-left: 200px;
+    color: white;
+}
