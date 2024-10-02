@@ -1,0 +1,5 @@
+Los elementos p y div son elementos en bloque, es decir, ocupan todo el ancho de la página.
+
+Los elementos en línea no precisan todo el ancho de la ventana.
+
+La etiqueta div ofrece un contenedor y es un elemento de tipo bloque o block.
