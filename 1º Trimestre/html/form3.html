@@ -6,6 +6,56 @@
     <title>Formulario 3</title>
 </head>
 <body>
-    
+    <form action="">
+        <fieldset>
+            <legend>Preferencias</legend>
+            <select multiple name="velocidad" id="velocidad">
+                <option value="100_mbits">100 Mbits</option>
+                <option value="1000_mbits">1000 Mbits</option>
+            </select>
+            <br>
+            <label for="dni">DNI <input type="text" name="dni" id="dni"></label>
+            <br>
+            <label for="name">Nombre <input type="text" name="nombre" id="name"></label>
+            <br>
+            <label for="lastname">Apellidos <input type="text" name="apellidos" id="lastname"></label>
+            <br>
+            <label for="email">Email <input type="text" name="email" id="email"></label>
+            <br><br>
+            <label for="color">Elija un color: <input type="color" name="colours" id="color"></label>
+            <br>
+            <textarea name="texto_largo" id="long_text" placeholder="Por favor, escriba aquí"></textarea>
+            <br>
+            <label for="p_amd"><input type="checkbox" name="procesador" id="p_amd" value="procesadoramd"> AMD</label>
+            <br>
+            <label for="p_i5"><input type="checkbox" name="procesador" id="p_i5" value="procesadorintel_i5"> Intel i5</label>
+            <br>
+            <label for="p_i7"><input type="checkbox" name="procesador" id="p_i7" value="procesadorintel_i7"> Intel i7</label>
+            <br><br>
+            <label for="time">Elija una hora: <input type="time" name="hora" id="time"></label>
+            <br>
+            <label for="network1"><input type="radio" name="red" id="network1" value="red2g"> 2G</label>
+            <br>
+            <label for="network2"><input type="radio" name="red" id="network2" value="red3g"> 3G</label>
+            <br>
+            <label for="network3"><input type="radio" name="red" id="network3" value="red4g"> 4G</label>
+            <br><br>
+            <label for="file">Elija un fichero: <input type="file" name="fichero" id="file"></label>
+            <br>
+            <label for="subject1"><input type="checkbox" name="asignatura" id="subject1" value="asignaturahistoria"> Historia</label>
+            <br>
+            <label for="subject2"><input type="checkbox" name="asignatura" id="subject2" value="asignaturageografia"> Geografía</label>
+            <br>
+            <label for="subject3"><input type="checkbox" name="asignatura" id="subject3" value="asignaturalengua"> Lengua</label>
+            <br>
+            <label for="subject4"><input type="checkbox" name="asignatura" id="subject4" value="asignaturamatematicas"> Matemáticas</label>
+            <br><br>
+            <label for="time2">Elija una hora: <input type="time" name="hora2" id="time2"></label>
+            <br>
+            <label for="file2">Elija un fichero: <input type="file" name="fichero2" id="file2"></label>
+            <br>
+            <textarea name="" id="" rows="8" cols="49" placeholder="Inserte aquí el texto"></textarea>
+        </fieldset>
+    </form>
 </body>
 </html>
