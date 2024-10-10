@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de pago</title>
+    <style>
+        form{
+            width: 800px;
+        }
+        button{
+            background-color: black;
+            color: white;
+            width: 200px;
+            height: 50px;
+            font-size: large;
+            font-weight: bold;
+            border: 1px solid black;
+        }
+        button:hover{
+            background-color: #007acc;
+            border: 1px solid #007acc;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <h1 style="display: inline-block;">Formulario de pago</h1>
+            <p style="display: inline-block;">(Los campos obligatorios se han marcado con <strong>*</strong>)</p>
+            <section>
+                <fieldset>
+                    <legend>Información de contacto</legend>
+                    <br>
+                    <fieldset>
+                        <legend>Profesión</legend>
+                        <p><label for="p1"><input type="radio" name="profesion" id="p1" value="p_profesor">Profesor/a</label></p>
+                        <p><label for="p2"><input type="radio" name="profesion" id="p2" value="p_estudiante">Estudiante</label></p>
+                        <p><label for="p3"><input type="radio" name="profesion" id="p3" value="p_otro">Otro</label></p>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Tratamiento</legend>
+                        <p><label for="t1"><input type="radio" name="tratamiento" id="t1" value="sr/sra">Sr/Sra</label></p>
+                        <p><label for="t2"><input type="radio" name="tratamiento" id="t2" value="dr/dra">Dr/Dra</label></p>
+                        <p><label for="t3"><input type="radio" name="tratamiento" id="t3" value="otro">Otro</label></p>
+                    </fieldset>
+                    <p><label for="nombre">Nombre: *<br><input type="text" name="name" id="nombre"></label></p>
+                    <p><label for="correo">Correo: *<br><input type="email" name="email" id="correo"></label></p>
+                    <p><label for="n_tel">Número de teléfono: *<br><input type="tel" name="phone_number" id="n_tel"></label></p>
+                    <p><label for="contraseña">Contraseña: *<br><input type="password" name="password" id="contraseña"></label></p>
+                </fieldset>
+            </section>
+            <br>
+            <section>
+                <fieldset>
+                    <legend>Información de pago</legend>
+                    <p><label for="t_tarjeta">Tipo de tarjeta: <select name="t_tarjeta" id="t_tarjeta">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="american_express">American Express</option>
+                    </select></label></p>
+                    <p><label for="n_tarjeta">Número de tarjeta: *<br><input type="number" name="n_tarjeta" id="n_tarjeta"></label></p>
+                    <p><label for="f_caducidad">Fecha de caducidad: *<br><input type="date" name="f_caducidad" id="f_caducidad"></label></p>
+                    <p><label for="correo2">Cuenta de paypal: *<br><input type="email" name="email2" id="correo2"></label></p>
+                    <p><label for="m_pago_pref">Método de pago preferido: <select name="m_pago_pref" id="m_pago">
+                        <option value="tarjeta_de_credito">Tarjeta de crédito</option>
+                        <option value="paypal">Paypal</option>
+                    </select></label></p>
+                </fieldset>
+            </section>
+            <br>
+            <p><button type="submit">VALIDAR EL PAGO</button></p>
+        </fieldset>
+    </form>
+</body>
+</html>
