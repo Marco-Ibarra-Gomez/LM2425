@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de búsqueda de texto</title>
+</head>
+<body>
+    <header>
+        <h1>BÚSQUEDA DE TEXTO</h1>
+    </header>
+    <form action="https://google.com/search" method="get" target="_blank">
+        <label for="google">Google: <br><input type="search" name="q" id="google"></label>
+        <br>
+        <button type="submit">BUSCAR</button>
+    </form>
+    <br>
+    <form action="https://duckduckgo.com/" method="get" target="_blank">
+        <label for="duckduckgo">DuckDuckGo: <br><input type="q" name="duckduckgo" id="duckduckgo"></label>
+        <br>
+        <button type="submit">BUSCAR</button>
+    </form>
+    <br>
+    <form action="https://bing.com/search" method="get" target="_blank">
+        <label for="bing">Bing: <br><input type="search" name="q" id="bing"></label> <!-- Se usa en el name="" el valor q de "query" para buscar mediante texto -->
+        <br>
+        <button type="submit">BUSCAR</button>
+    </form>
+    <p>...</p>
+</body>
+</html>

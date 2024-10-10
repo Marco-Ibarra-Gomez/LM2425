@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de búsqueda de imagenes</title>
+</head>
+<body>
+    <header>
+        <h1>BÚSQUEDA DE TEXTO</h1>
+    </header>
+    <form action="https://google.com/search" method="get" target="_blank">
+        <label for="google">Google: <br><input type="text" name="q" id="google" required></label>
+        <input type="hidden" name="tbm" value="isch">
+        <br>
+        <button type="submit">BUSCAR</button>
+    </form>
+    <br>
+    <form action="https://duckduckgo.com/" method="get" target="_blank">
+        <label for="duckduckgo">DuckDuckGo: <br><input type="search" name="q" id="duckduckgo" required></label>
+        <input type="hidden" name="iax" value="images">
+        <input type="hidden" name="ia" value="images">
+        <br>
+        <button type="submit">BUSCAR</button>
+    </form>
+    <br>
+    <form action="https://bing.com/search" method="get" target="_blank">
+        <label for="bing">Bing: <br><input type="search" name="q" id="bing" required></label> <!-- En el name="" se usa el valor q para búsqueda y luego se añade un input hidden con el name=""
+        correspondiente a el buscador y el value correspondiente al mismo -->
+        <input type="hidden" name="qc" value="images">
+        <br>
+        <button type="submit">BUSCAR</button>
+    </form>
+    <p>...</p>
+</body>
+</html>

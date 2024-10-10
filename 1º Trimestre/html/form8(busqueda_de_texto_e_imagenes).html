@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de búsqueda de texto e imagenes</title>
+</head>
+<body>
+    <header>
+        <h1>BÚSQUEDA DE TEXTO</h1>
+    </header>
+    <form action="https://google.com/search" method="get" target="_blank">
+        <label for="google">Google: <br><input type="text" name="q" id="google" required></label>
+        <br>
+        <label for="google2">Buscar imagenes: <input type="checkbox" name="tbm" value="isch" id="google2"></label>
+        <button type="submit">BUSCAR</button>
+    </form>
+    <br>
+    <form action="https://search.givewater.com/serp" method="get" target="_blank">
+        <label for="givewater">GiveWater: <br><input type="search" name="q" id="givewater" required></label>
+        <br>
+        <label for="givewater">Buscar imagenes: <input type="checkbox" name="qc" value="images" id="givewater">
+        <button type="submit">BUSCAR</button>
+    </form>
+    <p>...</p>
+</body>
+</html>

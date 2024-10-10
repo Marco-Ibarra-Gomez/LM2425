@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar imagenes</title>
+    <style>
+        form{
+            width: 800px;
+        }
+        select{
+            margin-top: 13px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="https://google.com/search" method="get" target="_blank" onsubmit="combineFilters()">
+        <fieldset>
+            <label for="buscador">Buscar: <br><input type="text" name="q" id="buscador" size="104" autocomplete="off" required></label>
+            <br><br>
+            <fieldset>
+                <legend>Tamaño</legend>
+                <select name="tbs" id="select1">
+                    <option selected disabled>Escoja el tamaño</option>
+                    <option value="isz:l">Grande</option>
+                    <option value="isz:m">Mediano</option>
+                    <option value="isz:i">Icono</option>
+                </select>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Color</legend>
+                <select name="tbs" id="select2">
+                    <option selected disabled>Escoja el color</option>
+                    <option value="ic:color">Color</option>
+                    <option value="ic:grey">Blanco y negro</option>
+                    <option value="ic:trans">Transparente</option>
+                </select>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Tipo</legend>
+                <select name="tbs" id="select3">
+                    <option selected disabled>Escoja el tipo</option>
+                    <option value="itp:clipart">Clip art</option>
+                    <option value="itp:lineart">Dibujo lineal</option>
+                    <option value="itp:animated">GIF</option>
+                </select>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Fecha</legend>
+                <select name="tbs" id="select4">
+                    <option selected disabled>Escoja la fecha</option>
+                    <option value="qdr:d">Últimas 24 horas</option>
+                    <option value="qdr:w">Última semana</option>
+                </select>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Licencia</legend>
+                <select name="tbs" id="select5">
+                    <option selected disabled>Escoja la licencia</option>
+                    <option value="il:cl">Creative Commons</option>
+                    <option value="il:ol">Comercial y otras</option>
+                </select>
+            </fieldset>
+            <br>
+            <input type="hidden" name="tbm" value="isch">
+
+            <button type="submit">BUSCAR</button>
+            <button type="reset">REINICIAR</button>
+        </fieldset>
+    </form>
+    <script>
+        function combineFilters() {
+            const size = document.getElementById('select1').value;
+            const color = document.getElementById('select2').value;
+            const type = document.getElementById('select3').value;
+            const date = document.getElementById('select4').value;
+            const license = document.getElementById('select5').value;
+
+            const filters = [size, color, type, date, license].filter(Boolean).join(',');
+            document.getElementById('tbs').value = filters;
+        }
+    </script>
+</body>
+</html>
