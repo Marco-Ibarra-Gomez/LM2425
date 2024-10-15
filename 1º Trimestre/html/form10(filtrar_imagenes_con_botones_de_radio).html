@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar imagenes con botones de radio</title>
+    <style>
+        #buscador{
+            height: 30px;
+            background-color: #f7f7f7;
+            border: 1px solid #dfdfdf;
+        }
+        #buscador:focus{
+            outline: 1px solid #4ea3dc;
+            background-color: white;
+        }
+        form{
+            width: 800px;
+        }
+        input[type="search"]{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://google.com/search" method="get"  target="_blank">
+        <fieldset>
+            <label for="">Buscar: <br><input type="search" name="q" id="buscador" required autocomplete="off"></label>
+            <br><br>
+            <fieldset>
+                <legend>Tamaño</legend>
+                <label for=""><input type="radio" name="tamano" id="" value="isz:l"> Grande</label>
+                <br>
+                <label for=""><input type="radio" name="tamano" id="" value="isz:m"> Mediano</label>
+                <br>
+                <label for=""><input type="radio" name="tamano" id="" value="isz:i"> Icono</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Color</legend>
+                <label for=""><input type="radio" name="" id=""></label>
+                <br>
+                <label for=""><input type="radio" name="" id=""></label>
+                <br>
+                <label for=""><input type="radio" name="" id=""></label>
+            </fieldset>
+        </fieldset>
+    </form>
+</body>
+</html>
