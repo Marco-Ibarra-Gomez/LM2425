@@ -14,7 +14,7 @@ Ejercicio 2
     ¿Por qué usarías una clase en lugar de un id? 
         Porque la clase me permite aplicar su estilo a varias etiquetas HTML sin problemas, en cambio id solo se puede aplicar sobre una única etiqueta
         por lo que en caso de que no sea algo muy especial y para evitar confundir id con clase es mejor usar constantemente las clases.
-    Si cambias el estilo de h2 en el CSS, ¿Cómo afecta eso a otros encabezados h2 en la página? 
+        Si cambias el estilo de h2 en el CSS, ¿Cómo afecta eso a otros encabezados h2 en la página? 
         El estilo se aplicará a todos los h2 del archivo en el que estemos trabajando ya que el tipo de
         selector que hemos asignado a h2 es general, por lo que se aplicará a todos (no es ni una clase ni un id, es un selector de etiqueta).
 
@@ -32,4 +32,3 @@ Ejercicio 4
         o identificadores adicionales.
     ¿Cómo afecta la estructura HTML a los selectores que puedes usar?
         Afecta directamente ya que los elementos anidados dentro de otros elementos se podrán seleccionar de manera más específica, y con ello tendríamos un diseño más detallado y preciso.
-        
