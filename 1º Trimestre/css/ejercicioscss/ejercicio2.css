@@ -1,0 +1,13 @@
+h2{
+    text-align: center;
+    color: aquamarine;
+}
+.parrafo{
+    color: burlywood;
+    font-size: 20px;
+}
+#especial{
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+}

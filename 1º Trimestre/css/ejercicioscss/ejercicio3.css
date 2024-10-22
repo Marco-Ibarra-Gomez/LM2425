@@ -1,0 +1,19 @@
+h3{
+    text-align: left;
+    background-color: lightcyan;
+    margin-right: 75%;
+    padding: 15px;
+}
+.centrado{
+    text-align: center;
+    background-color: lightgreen;
+    margin-right: 35%;
+    margin-left: 35%;
+    padding: 15px;
+}
+#derecha{
+    text-align: right;
+    background-color: lightcoral;
+    margin-left: 75%;
+    padding: 15px;
+}
