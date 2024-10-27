@@ -5,65 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi casa</title>
     <style>
-        #fachada{
+        #fachada1{
             background-color: brown;
-            width: 900px;
-            height: 500px;
+            width: 600px;
+            height: 300px;
             position: absolute;
-            top: 200px;
-            left: 200px;
+            top: 400px;
+            left: 800px;
+            border-bottom: 8px solid black;
+            border-right: 8px solid black;
         }
-        #v1{
+        #techo1 {
             position: absolute;
-            top: 80px;
-            left: 100px;
-            width: 150px;
-            height: 250px;
-            background-color: yellow;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-        }
-        #v2{
-            position: absolute;
-            top: 80px;
-            left: 650px;
-            width: 150px;
-            height: 250px;
-            background-color: yellow;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-        }
-        #puerta{
+            width: 650px;
+            height: 100px;
             background-color: black;
-            width: 200px;
-            height: 250px;
-            position: absolute;
-            top: 250px;
-            left: 350px;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
+            clip-path: polygon(90% 0%, 0% 0%, 10% 100%, 100% 100%);
+            top: 350px;
+            left: 800px;
+            border-bottom: 8px solid black;
+            border-right: 8px solid black;
         }
-        #pomo{
+        #fachada2{
+            position: absolute;
+            width: 335px;
+            height: 265px;
+            background-color: brown;
+            top: 435px;
+            left: 600px;
+            border-right: 8px solid black;
+            border-left: 8px solid black;
+            border-bottom: 8px solid black;
+        }
+        #techo2{
+            background-color: brown;
+            position: absolute;
+            width: 347px;
+            height: 205px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            top: 232px;
+            left: 603px;
+        }
+        .ventana_circular{
+            position: relative;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background-color: white;
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            top: 340px;
-            left: 490px;
+            background-color: black;
+            top: 110px;
+            left: 130px;
+            border: 5px solid white;
         }
-        #tejado{
-            height: 400px;
-            width: 900px;
+        #linea_vertical{
+            position: absolute;
+            width: 5px;
+            height: 80px;
+            background-color: white;
+            left: 37px;
+        }
+        #linea_horizontal{
+            position: absolute;
+            width: 80px;
+            height: 5px;
+            background-color: white;
+            top: 37px;
+        }
+        #techo3{
+            position: absolute;
+            background-color: black;
+            width: 347px;
+            height: 25px;
+            transform: rotate(126deg);
+            top: 325px;
+            left: 511px;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        }
+        #techo4{
+            position: absolute;
+            background-color: black;
+            width: 347px;
+            height: 25px;
+            transform: rotate(-126deg);
+            top: 325px;
+            left: 694px;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
         }
     </style>
 </head>
 <body>
-    <div id="fachada">
-        <div id="v1"></div>
-        <div id="v2"></div>
+    <div id="fachada1"></div>
+    <div id="techo1"></div>
+    <div id="fachada2">
         <div id="puerta"></div>
-        <div id="pomo"></div>
     </div>
+    <div id="techo2">
+        <div class="ventana_circular">
+            <div id="linea_vertical"></div>
+            <div id="linea_horizontal"></div>
+        </div>
+    </div>
+    <div id="techo3"></div>
+    <div id="techo4"></div>
 </body>
 </html>
