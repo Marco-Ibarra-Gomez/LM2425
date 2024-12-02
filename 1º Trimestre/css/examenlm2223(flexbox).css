@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    height: 100vh;
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    font-size: 1.1em;
+    background-color: white;
+    margin: 0;
+}
+header{
+    color: darkgray;
+    justify-content: center;
+}
+footer{
+    color: darkgoldenrod;
+    justify-content: center;
+}
