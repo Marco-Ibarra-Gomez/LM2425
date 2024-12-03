@@ -61,16 +61,16 @@ header, nav, section, footer{
     border: 2px solid whitesmoke;
     border-radius: 10px;
     color: white;
-    margin: 20;
     /* Si le meto margin: 20px se me descuadra todo */
 }
-@media only screen and (max-width: 640px){
+@media screen and (max-width: 640px){
     body{
         min-height: 0;
     }
     main{
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
     nav{
         width: auto;
@@ -79,6 +79,7 @@ header, nav, section, footer{
     section{
         order: 1;
         flex-basis: auto;
+        width: auto;
     }
 }
 @media print {

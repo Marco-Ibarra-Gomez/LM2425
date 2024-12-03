@@ -1,0 +1,68 @@
+body{
+    background-image: url(../../imagenes/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Trebuchet', Geneva, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+div{
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+}
+.envoltorio{
+    width: 60%;
+    height: 100vh;
+}
+header{
+    height: 100px;
+    background-color: #b28306;
+    color: #4c3803;
+    border-radius: 20px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+nav{
+    background-color: #ebcd7c;
+    border-radius: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+nav a{
+    background-color: #4c3803;
+    text-decoration: none;
+    color: #b28306;
+    
+}
+main{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 7px solid black;
+}
+article{
+    width: 75%;
+}
+aside{
+    width: 25%;
+    border-radius: 20px;
+    background-color: #b28306;
+    padding: 10px;
+    padding-bottom: 40px;
+}
+p::first-letter{
+    color: #4c3803;
+    font-weight: bold;
+}
+footer a{
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
+}
