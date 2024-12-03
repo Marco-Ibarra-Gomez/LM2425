@@ -14,33 +14,30 @@ header{
 main{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     margin: 0;
     padding: 0;
+    flex: 1 1 auto;
 }
 nav{
     background-color: darkcyan;
     width: 15em;
-    text-align: left;
 }
-nav ul li{
-    list-style: none;
-}
-nav ul li a{
+nav a{
     display: block;
     padding: 0.5em 1em;
     color: white;
     text-decoration: none;
     border-bottom: solid rgba(255, 255, 255, 0.3);
 }
-nav ul li a:hover{
+nav a:hover{
     cursor: progress;
 }
 section{
+    display: block;
+    flex: 1;
     background-color: darkolivegreen;
     margin: 0;
     padding: 0;
-    max-width: 87%;
 }
 footer{
     text-align: center;
@@ -64,5 +61,41 @@ header, nav, section, footer{
     border: 2px solid whitesmoke;
     border-radius: 10px;
     color: white;
+    margin: 20;
     /* Si le meto margin: 20px se me descuadra todo */
+}
+@media only screen and (max-width: 640px){
+    body{
+        min-height: 0;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+        width: auto;
+        order: 0;
+    }
+    section{
+        order: 1;
+        flex-basis: auto;
+    }
+}
+@media print {
+    body{
+        color: black;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+        display: none;
+    }
+    section{
+        width: 100%;
+    }
 }
