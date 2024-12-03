@@ -1,16 +1,68 @@
 body{
     display: flex;
-    height: 100vh;
-    font-family: "Century Gothic", Helvetica, sans-serif;
+    min-height: 100vh;
+    font-family: "Century Gothic", Helvetica, arial, sans-serif;
     font-size: 1.1em;
     background-color: white;
     margin: 0;
+    flex-direction: column;
 }
 header{
-    color: darkgray;
-    justify-content: center;
+    background-color: darkgray;
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: darkcyan;
+    width: 15em;
+    text-align: left;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    display: block;
+    padding: 0.5em 1em;
+    color: white;
+    text-decoration: none;
+    border-bottom: solid rgba(255, 255, 255, 0.3);
+}
+nav ul li a:hover{
+    cursor: progress;
+}
+section{
+    background-color: darkolivegreen;
+    margin: 0;
+    padding: 0;
+    max-width: 87%;
 }
 footer{
-    color: darkgoldenrod;
+    text-align: center;
+    background-color: darkgoldenrod;
     justify-content: center;
+}
+.fl::first-letter{
+    color: darkgrey;
+    font-size: 200%;
+}
+img{
+    float: left;
+    border: 5px solid goldenrod;
+    border-radius: 2vh;
+    margin-top: 20px;
+    margin-right: 30px;
+    max-width: 100%;
+}
+header, nav, section, footer{
+    padding: 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    color: white;
+    /* Si le meto margin: 20px se me descuadra todo */
 }
