@@ -1,3 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
-    background-image: url();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../imagenes/bg\(1\).jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: black;
+    font-size: 200%;
+    height: 100%;
+}
+form{
+    display: flex; 
+    flex-wrap: nowrap; 
+    justify-content: center; 
+    align-items: center; 
+    width: 80%;  
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+form input{
+    font-size: inherit;
+    color: inherit;
+    margin: 10px;
+    width: 300px;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #E6E6E6;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.entrada:hover{
+    outline:  5px solid #3759e2;
+}
+form input::placeholder{
+    font-size: inherit;
+}
+button{
+    position: relative;
+    width: 100px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #3759e2;
+    color: #fff;
+    box-shadow: 8px 8px 8px rgba(226, 209, 12, 0.35);
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+button:hover{
+    box-shadow: none;
+}
+@media (max-width: 980px){
+    form{
+        flex-wrap: wrap;
+    }
 }
