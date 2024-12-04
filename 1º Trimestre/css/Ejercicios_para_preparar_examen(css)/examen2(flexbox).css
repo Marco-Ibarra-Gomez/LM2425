@@ -6,13 +6,12 @@
 body{
     font-family: 'Open Sans', Helvetica, sans-serif;
     background-color: #970043;
-}
-div{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 header{
+    height: 70px;
     margin-top: 5px;
     margin-right: 5px;
     margin-left: 5px;
@@ -28,22 +27,28 @@ main{
     flex-direction: row;
     width: 100%;
     height: 100vh;
+    flex: 1;
 }
 aside{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #970043;
-    width: 20%;
+    flex: 1;
     padding: 0 30px;
 }
 aside img{
     max-width: 100%;
 }
 section{
-    width: 60%;
+    flex: 2;
     background-color: #f2f2f2;
     padding: 10px;
+    height: 100vh;
+}
+section:hover{
+    background-color: #970043;
+    color: white;
 }
 figure{
     display: flex;
@@ -70,9 +75,25 @@ footer{
     font-weight: bold;
     font-size: 150%;
 }
+.margin1{
+    margin-top: 10px;
+}
+.margin1 a{
+    text-decoration: none;
+    color: #ffd100;
+    font-weight: bold;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+a{
+    cursor: help;
+}
 @media screen and (max-width: 768px){
-    div{
-        display: flex;
+    body{
+        min-height: 100vh;
     }
     header{
         order: -1;
@@ -81,15 +102,36 @@ footer{
         display: flex;
         flex-direction: column;
         order: 0;
+        height: 100vh;
     }
     aside{
-        width: auto;
+        max-width: 100%;
+        padding: 20px;
     }
     section{
         width: auto;
+        height: 100vh;
     }
     footer{
-        width: auto;
+        display: flex;
+        background-color: #ffd100;
+        height: 70px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-bottom: 5px;
         order: 2;
+        width: auto;
+        padding: 30px;
+    }
+    figure img{
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    section:hover{
+        background-color: #970043;
+        color: white;
     }
 }
+
