@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     background-image: url(../../imagenes/bg.jpg);
     background-repeat: no-repeat;
@@ -10,37 +14,47 @@ body{
     align-items: center;
     height: 100vh;
 }
-div{
-    margin: 0;
-    padding: 0;
-    border-spacing: 0;
-}
 .envoltorio{
-    width: 60%;
-    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 header{
     height: 100px;
     background-color: #b28306;
     color: #4c3803;
     border-radius: 20px;
-    text-align: center;
     border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.margin1{
+    margin-top: 30px;
 }
 nav{
     background-color: #ebcd7c;
     border-radius: 20px;
-    height: 50px;
+    height: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 15px;
     
 }
 nav a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #4c3803;
     text-decoration: none;
     color: #b28306;
-    
+    border-radius: 20px;
+    width: 138px;
+    height: 23px;
+    font-weight: bold;
+    font-size: 85%;
 }
 main{
     display: flex;
@@ -49,6 +63,7 @@ main{
 }
 article{
     width: 75%;
+    padding-left: 15px;
 }
 aside{
     width: 25%;
@@ -57,12 +72,65 @@ aside{
     padding: 10px;
     padding-bottom: 40px;
 }
-p::first-letter{
+.fr::first-letter{
     color: #4c3803;
     font-weight: bold;
+}
+footer{
+    margin-top: 30px;
+    margin-left: 15px;
 }
 footer a{
     text-decoration: none;
     color: grey;
     font-weight: bold;
+}
+@media (max-width: 1200px){ 
+    .envoltorio{ 
+        padding-left: 15%; 
+        padding-right: 15%; 
+    } 
+} 
+@media (max-width: 992px){ 
+    .envoltorio{ 
+        padding-left: 10%; 
+        padding-right: 10%; 
+    } 
+} 
+@media (max-width: 768px){ 
+    .envoltorio{ 
+        padding-left: 5%; 
+        padding-right: 5%; }
+}
+@media screen and (max-width: 640px){
+    .envoltorio{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    header{
+        order: -1;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-bottom: none;
+        order: 0;
+    }
+    nav{
+        width: 100%;
+        order: 1;
+    }
+    article{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    aside{
+        width: 100%;
+    }
+    footer{
+        order: 3;
+    }
 }
