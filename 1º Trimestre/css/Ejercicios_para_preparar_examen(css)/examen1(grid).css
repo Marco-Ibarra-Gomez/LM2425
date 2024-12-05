@@ -1,52 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
 *{
     margin: 0;
     padding: 0;
 }
 body{
-    width: 100%;
-    font-variant: small-caps;
-    font-family: 'Open sans';
+    background-color: lightgrey;
+    margin: 20px 200px;
+}
+body, input, textarea, select{
+    font-variant-caps: small-caps;
     font-weight: bold;
     font-size: 24px;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    
+    font-family: 'Open Sans Condensed';
 }
-div{
-    width: 80%;
-
-}
-form{
-    display: grid;
-    border: 1px solid black;
+header{
+    margin-bottom: 20px;
 }
 fieldset{
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: repeat(10, 1fr) ;
-    grid-template-areas: 'd .'
-                         'a b'
-                         'a b'
-                         'a b'
-                         'a b'
-                         'a b'
-                         'a b'
-                         'a c'
-                         'a .'
-                         'b b'
-                         'a b';
     border: none;
 }
-label{
-    grid-area: a;
+form{
+    border: 1px solid black;
+    padding: 0 10px;
+    background-color: white;
 }
-input{
-    grid-area: b;
+.grid{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    row-gap: 1em;
 }
-select{
-    grid-area: c;
+textarea{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-end: span 10;
+    font-variant-caps: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
 }
-legend{
-    grid-area: d;
+#power{
+    width: 1em;
+    height: 1em;
 }
