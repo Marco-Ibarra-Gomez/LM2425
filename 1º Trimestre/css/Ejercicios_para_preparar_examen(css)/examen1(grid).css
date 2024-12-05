@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    font-variant: small-caps;
+    font-family: 'Open sans';
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    
+}
+div{
+    width: 80%;
+
+}
+form{
+    display: grid;
+    border: 1px solid black;
+}
+fieldset{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: repeat(10, 1fr) ;
+    grid-template-areas: 'd .'
+                         'a b'
+                         'a b'
+                         'a b'
+                         'a b'
+                         'a b'
+                         'a b'
+                         'a c'
+                         'a .'
+                         'b b'
+                         'a b';
+    border: none;
+}
+label{
+    grid-area: a;
+}
+input{
+    grid-area: b;
+}
+select{
+    grid-area: c;
+}
+legend{
+    grid-area: d;
+}
