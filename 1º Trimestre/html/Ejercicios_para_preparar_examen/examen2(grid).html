@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/Ejercicios_para_preparar_examen(css)/examen2(grid).css">
     <title>Examen 2 - GRID</title>
 </head>
 <body>
-    
+    <main>
+        <header>
+            <h2>IES Antonio Machado</h2>
+            <ul>
+                <li>Calle Arroyo 80</li>
+                <li>41008 Sevilla</li>
+                <li>41009071@juntadeandalucia.es</li>
+            </ul>
+        </header>
+        <section>
+            <h2>Contacta con nosotros</h2>
+            <div class="grid">
+                <label for="name">Nombre <br><input type="text" name="nombre" id="name"></label>
+
+                <label for="surname">Apellidos <br><input type="text" name="apellido" id="surname"></label>
+                
+
+                <label for="email">Email <br><input type="email" name="correo" id="email"></label>
+                
+
+                <label for="affair">Asunto <br><input type="text" name="asunto" id="affair"></label>
+                
+                <label for="message" class="span2">Escribe tu mensaje <br><textarea name="mensaje" id="message"></textarea></label>
+
+                <input type="submit" value="Enviar">
+            </div>
+        </section>
+    </main>
 </body>
 </html>
