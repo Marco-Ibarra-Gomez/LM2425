@@ -102,12 +102,12 @@ footer a{
     color: white;
 }
 @media (max-width: 760px) {
-    .container{
+    .contenedor{
         grid-template-columns: 1fr;
         grid-template-areas: 
             "header"
-            "main"
-            "sidebar"
+            "section"
+            "aside"
             "footer";
     }
 }
