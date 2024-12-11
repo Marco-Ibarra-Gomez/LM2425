@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6d83f2, #bad4f3);
+}
+.contenedor{
+    display: grid;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 8px 8px 8px rgba(63, 63, 60, 0.2); /* Esto debo mirarlo */
+    max-width: 600px;
+    width: 90%;
+    padding: 2.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    grid-template-areas: 'header'
+                         'form';
+}
+fieldset{
+    border: none;
+}
+header{
+    grid-area: header;
+}
+header h1{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #444;
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 1rem;
+}
+form{
+    grid-area: form;
+}
+fieldset{
+    display: grid;
+    gap: 1rem;
+}
+.email, .contraseña{
+    padding: 1rem;
+    border: 2px dashed #ddd;
+}
+label{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+input{
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+input:focus{
+    border: 2px solid #ffda44;
+    box-shadow: 7px 7px 5px #ffda44;
+    outline: none;
+    transition-duration: 1s;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    border: 2px dashed #ddd;
+    padding: 0.5rem;
+}
+.flex p a{
+    font-size: 0.85rem;
+    color: #6d83f2;
+    text-decoration: none;
+}
+.flex p a:hover{
+    cursor:crosshair;
+    color: #5066c5;
+}
+.botones{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px dashed #ddd;
+}
+button{
+    border-radius: 5px;
+    background-color: #6d83f2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.75rem;
+    border: none;
+}
+button:hover{
+    color: #5066c5;
+    transition-duration: 0.3s;
+}
+.darse_alta{
+    background-color: #9ec9ff;
+
+}
+.darse_alta:hover{
+    background-color: #7aa6e6;
+}
+
+@media (max-width: 768px){
+    fieldset{
+        display: grid;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+    .flex{
+        order: 1;
+    }
+    .botones{
+        order: 0;
+        flex-direction: column;
+    }
+}
+

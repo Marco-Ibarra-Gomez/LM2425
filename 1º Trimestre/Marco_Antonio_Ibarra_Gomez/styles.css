@@ -1,0 +1,123 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@100;300;500;700&display=swap');
+
+:root{
+    --primary-color: #4CAF50;
+    --secondary-color: #f0f0f0;
+    --text-color: #333;
+    --highlight-color: #FF5722;
+    --nav-bg-color: #222;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Lora";
+}
+header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    margin-bottom: 10px;
+}
+header h1{
+    font-size: 2.5rem;
+    color: white;
+}
+nav{
+    position: sticky;
+    top: 0;
+    background-color: var(--nav-bg-color); 
+    margin-top: 0;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+nav ul li{
+    text-align: center;
+    padding: 0.5rem 1rem;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    font-family: inherit;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+nav ul li a:hover{
+    background-color: var(--highlight-color);
+    transition-duration: 0.2s;
+}
+aside{
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    margin-top: 0;
+}
+aside img{
+    border-radius: 8px;
+    width: 98%;
+    margin: 10px 0;
+}
+section p, section h3{
+    font-family: "Poppins", sans-serif;
+    margin-left: 25px;
+}
+section h3{
+    font-weight: bold;
+
+}
+section p::first-letter{
+    color: var(--highlight-color);
+    font-size:xx-large;
+    font-weight: bold;
+}
+footer{
+    background-color: var(--nav-bg-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+footer a{
+    text-decoration: none;
+    color: var(--highlight-color);
+}
+footer p a:hover{
+    text-decoration: underline;
+    cursor: wait;
+}
+
+@media (max-width:768px){
+    header{
+        display: none;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    aside{
+        order: 1;
+    }
+    section{
+        order: 0;
+    }
+}
