@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            margin: 20px 0;
+        }
+        form{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        fieldset{
+            border: none;
+        }
+        legend{
+            margin-bottom: 10px;
+        }
+        input{
+            margin-bottom: 10px;
+        }
+        button{
+            width: 140px;
+            height: 40px;
+            background-color: lightseagreen;
+            color: white;
+            outline: none;
+            border: none;
+        }
+        button:hover{
+            background-color: lightskyblue;
+            color: white;
+        }
+        p{
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Ejercicio 2</h1>
+    </header>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Conversor de Euros a Dólares y viceversa</legend>
+            <label for="e_d">Euros a Dólares</label><br>
+            <input type="text" name="nombre" id="e_d" required>
+            <p id="1"></p>
+            <label for="d_e">Dólares a Euros</label><br>
+            <input type="text" name="contraseña" id="d_e" required>
+            <p id="2"></p>
+        </fieldset>
+        <button onclick="boton1()" type="button">Convertir a Dólares</button>
+        <button onclick="boton2()" type="button">Convertir a Euros</button>
+        <script>
+            function boton1(){
+                var cadena = document.getElementById('e_d').value;
+                if(isNaN(cadena)){
+                    alert('No es un valor numérico');
+                }else{
+                    var cadena_num = parseFloat(cadena);
+                }
+                var conversion;
+                conversion 
+                var parrafo1 = document.getElementById('1');
+                parrafo1.innerHTML = 
+            }
+            function boton2(){
+
+            }
+        </script>
+    </form>
 </body>
 </html>
