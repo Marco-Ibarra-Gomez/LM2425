@@ -1,0 +1,39 @@
+h1{
+    text-align: center;
+}
+.forma{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#rojo{
+    background-color: red;
+}
+#verde{
+    background-color: green;
+}
+#azul{
+    background-color: blue;
+}
+.contenedor1{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+.caja{
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    background-color: grey;
+    font-size: smaller;
+    text-align: center;
+    padding-top: 4px;
+    margin-bottom: 10px;
+}
+.contenedor2{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}

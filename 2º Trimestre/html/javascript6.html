@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript 6</title>
     <style>
-        .caja{
+        #caja{
             height: 90px;
             line-height: 90px;
             text-align: center;
             border: 2px dashed #f69c55;
-            width: 90px;
         }
     </style>
 </head>
@@ -18,5 +17,6 @@
     <h1>Utilidades en JavaScript</h1>
     <div id="caja">Ahora estoy</div>
     <button type="button" onclick="document.getElementById('caja').style.display='none'">Click para ocultar la caja</button>
+    <button type="button" onclick="document.getElementById('caja').style.display='block'">Click para mostrar</button>
 </body>
 </html>
