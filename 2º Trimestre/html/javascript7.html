@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 7</title>
+</head>
+<body>
+    <h1>Sintaxis en JavaScript</h1>
+    <p>Creación de una variable y visualización en pantalla</p>
+    <p id="parrafo"></p>
+    <script>
+        var linea ="Hola mundo!"; // var es una palabra reservada de JavaScript
+    /* (Esto es un comentario multilínea)
+        Hola mundo! es un valor literal porque porque el valor es 
+        explícitamente lo que ves en el código, sin interpretación adicional. En caso de 
+        no ser literal, su valor se obtendría de un cálculo, expresión o referencia a una variable
+        en lugar de ser directamente escrito (i.e. var suma= a + b, suma no es un valor literal, 
+        ya que es el resultado de a + b) 
+    */
+        document.getElementById('parrafo').innerHTML = linea;
+
+    /*
+        Con getElementById('') podemos manipular una etiqueta HTML a través de su identificador.    
+    */
+        var numeroReal = 8.5; // Variable numérica (Esto es un comentario de una línea)
+        var resultado = 3+8.5; // Uso de operadores
+        document.write(resultado); // Escribe en el documento el resultado
+    </script>
+</body>
+</html>
