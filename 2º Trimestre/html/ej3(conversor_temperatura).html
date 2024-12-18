@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            margin: 20px 0;
+        }
+        form{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        fieldset{
+            border: none;
+        }
+        legend{
+            margin-bottom: 10px;
+        }
+        input{
+            margin-bottom: 10px;
+        }
+        button{
+            width: 140px;
+            height: 40px;
+            background-color: lightseagreen;
+            color: white;
+            outline: none;
+            border: none;
+            margin-top: 40px;
+        }
+        button:hover{
+            background-color: lightskyblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ejercicio 3</h1>
+    </header>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Conversor de Celsius (ºC) a Farenheit (ºF)</legend>
+            <label for="c_f">Celsius a Farenheit</label><br>
+            <input type="text" name="nombre" id="c_f" required>
+            <p id="1"></p><br>
+            <label for="f_c">Farenheit a Celsius</label><br>
+            <input type="text" name="contraseña" id="f_c" required>
+            <p id="2"></p>
+        </fieldset>
+        <button onclick="boton1()" type="button">Convertir a Farenheit</button>
+        <button onclick="boton2()" type="button">Convertir a Celsius</button>
+        <script>
+            function boton1(){
+                var cadena0 = document.getElementById('c_f').value;
+                if(cadena0 === ""){
+                    alert('Por favor, ingresa un valor en Celsius.'); 
+                    return; 
+                }
+                var cadena = cadena0.replace(',', '.');
+                if(isNaN(cadena)){
+                    alert('No es un valor numérico.');
+                    return;
+                }else{
+                    var cadena_num = parseFloat(cadena);
+                }
+                var conversion;
+                conversion = (cadena_num*(9/5))+32;
+                var parrafo1 = document.getElementById('1');
+                parrafo1.innerHTML = 'La conversión da ' + conversion + ' Farenheit (ºF)';
+            }
+            function boton2(){
+                var cadena0 = document.getElementById('f_c').value;
+                if(cadena0 === ""){
+                    alert('Por favor, ingresa un valor en Farenheit.'); 
+                    return; 
+                }
+                var cadena = cadena0.replace(',', '.');
+                if(isNaN(cadena)){
+                    alert('No es un valor numérico.');
+                    return;
+                }else{
+                    var cadena_num = parseFloat(cadena);
+                }
+                var conversion;
+                conversion = ((cadena_num-32)*5)/9;
+                var parrafo1 = document.getElementById('2');
+                parrafo1.innerHTML = 'La conversión da ' + conversion + ' Celsius (ºC)';
+            }
+        </script>
+    </form>
+</body>
+</html>

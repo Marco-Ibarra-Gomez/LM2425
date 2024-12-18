@@ -62,27 +62,37 @@
         <script>
             function boton1(){
                 var cadena0 = document.getElementById('e_d').value;
-                var cadena = cadena0.replace(',', '.');
-                if(isNaN(cadena)){
-                    alert('No es un valor numérico');
-                }else{
-                    var cadena_num = parseFloat(cadena);
+                if(cadena0 === ""){
+                    alert('Por favor, ingresa un número.'); 
+                    return; 
                 }
-                var conversion;
-                conversion = cadena_num*0.94;
-                var parrafo1 = document.getElementById('1');
-                parrafo1.innerHTML = 'La conversión da ' + conversion + ' dólares';
-            }
-            function boton2(){
-                var cadena0 = document.getElementById('d_e').value;
                 var cadena = cadena0.replace(',', '.');
                 if(isNaN(cadena)){
-                    alert('No es un valor numérico');
+                    alert('No es un valor numérico.');
+                    return;
                 }else{
                     var cadena_num = parseFloat(cadena);
                 }
                 var conversion;
                 conversion = cadena_num/0.94;
+                var parrafo1 = document.getElementById('1');
+                parrafo1.innerHTML = 'La conversión da ' + conversion + ' dólares';
+            }
+            function boton2(){
+                var cadena0 = document.getElementById('d_e').value;
+                if(cadena0 === ""){
+                    alert('Por favor, ingresa un número.'); 
+                    return;
+                }
+                var cadena = cadena0.replace(',', '.');
+                if(isNaN(cadena)){
+                    alert('No es un valor numérico.');
+                    return;
+                }else{
+                    var cadena_num = parseFloat(cadena);
+                }
+                var conversion;
+                conversion = cadena_num*0.94;
                 var parrafo1 = document.getElementById('2');
                 parrafo1.innerHTML = 'La conversión da ' + conversion + ' euros';
             }
