@@ -35,13 +35,11 @@
             color: white;
             outline: none;
             border: none;
+            margin-top: 40px;
         }
         button:hover{
             background-color: lightskyblue;
             color: white;
-        }
-        p{
-            margin-top: 50px;
         }
     </style>
 </head>
@@ -54,7 +52,7 @@
             <legend>Conversor de Euros a Dólares y viceversa</legend>
             <label for="e_d">Euros a Dólares</label><br>
             <input type="text" name="nombre" id="e_d" required>
-            <p id="1"></p>
+            <p id="1"></p><br>
             <label for="d_e">Dólares a Euros</label><br>
             <input type="text" name="contraseña" id="d_e" required>
             <p id="2"></p>
@@ -63,19 +61,30 @@
         <button onclick="boton2()" type="button">Convertir a Euros</button>
         <script>
             function boton1(){
-                var cadena = document.getElementById('e_d').value;
+                var cadena0 = document.getElementById('e_d').value;
+                var cadena = cadena0.replace(',', '.');
                 if(isNaN(cadena)){
                     alert('No es un valor numérico');
                 }else{
                     var cadena_num = parseFloat(cadena);
                 }
                 var conversion;
-                conversion 
+                conversion = cadena_num*0.94;
                 var parrafo1 = document.getElementById('1');
-                parrafo1.innerHTML = 
+                parrafo1.innerHTML = 'La conversión da ' + conversion + ' dólares';
             }
             function boton2(){
-
+                var cadena0 = document.getElementById('d_e').value;
+                var cadena = cadena0.replace(',', '.');
+                if(isNaN(cadena)){
+                    alert('No es un valor numérico');
+                }else{
+                    var cadena_num = parseFloat(cadena);
+                }
+                var conversion;
+                conversion = cadena_num/0.94;
+                var parrafo1 = document.getElementById('2');
+                parrafo1.innerHTML = 'La conversión da ' + conversion + ' euros';
             }
         </script>
     </form>
