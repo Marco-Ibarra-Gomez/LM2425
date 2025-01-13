@@ -51,16 +51,16 @@
         <fieldset>
             <legend>Conversor de Euros a Dólares y viceversa</legend>
             <label for="e_d">Euros a Dólares</label><br>
-            <input type="text" name="nombre" id="e_d" required>
+            <input type="text" id="e_d" required>
             <p id="1"></p><br>
             <label for="d_e">Dólares a Euros</label><br>
-            <input type="text" name="contraseña" id="d_e" required>
+            <input type="text" id="d_e" required>
             <p id="2"></p>
         </fieldset>
-        <button onclick="boton1()" type="button">Convertir a Dólares</button>
-        <button onclick="boton2()" type="button">Convertir a Euros</button>
+        <button onclick="convertir_a_dolares()" type="button">Convertir a Dólares</button>
+        <button onclick="convertir_a_euros()" type="button">Convertir a Euros</button>
         <script>
-            function boton1(){
+            function convertir_a_dolares(){
                 var cadena0 = document.getElementById('e_d').value;
                 if(cadena0 === ""){
                     alert('Por favor, ingresa un número.'); 
@@ -78,7 +78,7 @@
                 var parrafo1 = document.getElementById('1');
                 parrafo1.innerHTML = 'La conversión da ' + conversion + ' dólares';
             }
-            function boton2(){
+            function convertir_a_euros(){
                 var cadena0 = document.getElementById('d_e').value;
                 if(cadena0 === ""){
                     alert('Por favor, ingresa un número.'); 
