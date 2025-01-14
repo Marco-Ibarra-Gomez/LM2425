@@ -6,6 +6,27 @@
     <title>Ejercicio Arrays</title>
 </head>
 <body>
-    
+    <form action="">
+        <fieldset>
+            <legend>Array</legend>
+            <input type="text" name="" id="caja"><br>
+            <input type="button" onclick="añadir()" value="Añadir elemento"><br><br>
+            <input type="button" id="eliminar" value="Eliminar elemento"><br><br>
+            <input type="button" id="creciente" value="Ordenar de manera creciente"><br><br>
+            <input type="button" id="decreciente" value="Ordenar de manera decreciente"><br><br>
+            <input type="text" name="" id="">
+            <p id="texto_js"></p>
+        </fieldset>
+    </form>
+    <script>
+        let array = [];
+        function añadir(){
+            
+            let añadir_e = document.getElementById("caja").value;
+            array.push(añadir_e);
+            let parrafo1 = document.getElementById("texto_js");
+            parrafo1.innerHTML = array.join(', ');
+        }
+    </script>
 </body>
 </html>

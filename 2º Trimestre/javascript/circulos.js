@@ -24,6 +24,6 @@ function azul_v(){
     }
 
     function mostrar(id){ 
-        document.getElementById(id).style.visibility='hidden';
+        document.getElementById(id).style.visibility='visible';
     }
 */
