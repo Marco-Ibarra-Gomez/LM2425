@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/parimpar.css">
+</head>
+<body>
+    <form action="">
+        <h1>Calcular si el número es par o impar</h1>
+        <label for="par_impar">Inserta un número</label>
+        <input type="text" id="par_impar" name="parimpar" placeholder="0, 1, 2, ...">
+        <p id="resultado"></p>
+        <button type="submit" onclick="parImpar()">Calcular</button>
+    </form>
+    <script>
+        function parImpar(){
+            event.preventDefault();
+            let parImpar = document.getElementById("par_impar").value;
+            if(parImpar === ""){
+                    alert('Por favor, ingresa un número.'); 
+                    return; 
+                }
+                var parImpar2 = parImpar.replace(',', '.');
+                if(isNaN(parImpar2)){
+                    alert('No es un valor numérico.');
+                    return;
+                }else{
+                    var parImpar3 = parseFloat(parImpar2);
+                }
+            if(parImpar3%2 === 0){
+                document.getElementById("resultado").innerHTML = 'El número introducido es par';
+            }
+            else{
+                document.getElementById("resultado").innerHTML = 'El número introducido es impar';
+            }
+        }
+    </script>
+</body>
+</html>

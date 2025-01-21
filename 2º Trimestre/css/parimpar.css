@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    margin: 20px 0;
+}
+form{
+    width: 1000px;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+    margin-bottom: 60px;
+}
+fieldset{
+    border: none;
+}
+legend{
+    margin-bottom: 10px;
+}
+input{
+    margin-bottom: 10px;
+}
+button{
+    width: 140px;
+    height: 40px;
+    background-color: lightseagreen;
+    color: white;
+    outline: none;
+    border: none;
+    margin-top: 40px;
+}
+button:hover{
+    background-color: lightskyblue;
+    color: white;
+    cursor: pointer;
+}
+#resultado{
+    width: 600px;
+    height: 10px;
+}

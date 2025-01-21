@@ -28,6 +28,8 @@
 
                 <label for="modulo6">Digitalización: </label>
                 <input type="text" id="modulo6" name="modulo6" placeholder="Calificación de digitalización"><br><br>
+                <p id="media"></p>
+                <p id="suspensos_aprobados"></p>
             </fieldset>
             <button onclick="hacermedia()" type="submit">Calcular media</button>
         </form>
@@ -35,8 +37,10 @@
             function hacermedia(){
                 event.preventDefault();
                 let modulos = []; 
+                let aprobados = [];
+                let suspensos = [];
                 for(let i = 1; i<=6; i++){
-                    let valorCaja1 = document.getElementById('input' + i).value;
+                    let valorCaja1 = document.getElementById('modulo' + i).value;
                     if(valorCaja1 === ""){
                     alert('Por favor, ingresa un número.'); 
                     return; 
@@ -46,11 +50,22 @@
                         alert('No es un valor numérico.');
                         return;
                     }
+                    if(valorCaja2<1 || valorCaja2>10){
+                        alert('Inserta un valor del 1 al 10');
+                    }
                     else{
                         let valorCaja3 = parseFloat(valorCaja2);
-                        
+                        if(valorCaja3>=5){
+                            aprobados.push(valorCaja3)
+                        }else{
+                            suspensos.push(valorCaja3)
+                        }
+                        modulos.push(valorCaja3);
                     }                   
                 }
+                let suma = (modulos[0]+modulos[1]+modulos[2]+modulos[3]+modulos[4]+modulos[5])/modulos.length;
+                document.getElementById("media").innerHTML = 'Tu media aritmética es ' + suma;
+                document.getElementById("suspensos_aprobados").innerHTML = 'Has aprobado ' + aprobados.length + ' asignaturas y has suspendido ' + suspensos.length;
             };
         </script>
     </div>
