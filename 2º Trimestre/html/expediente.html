@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Calificaciones</title>
+    <link rel="stylesheet" href="../css/expediente.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calificaciones CFGS A.S.I.R</h1>
+        <form action="#" method="post" id="formulario">
+            <fieldset>
+                <label for="modulo1">Lenguaje de marcas: </label>
+                <input type="text" id="modulo1" name="modulo1" placeholder="Calificación de LM"><br><br>
+
+                <label for="modulo2">Instalación de sistemas operativos: </label>
+                <input type="text" id="modulo2" name="modulo2" placeholder="Calificación de ISO"><br><br>
+
+                <label for="modulo3">Base de datos: </label>
+                <input type="text" id="modulo3" name="modulo3" placeholder="Calificación de BD"><br><br>
+
+                <label for="modulo4">Administración de redes: </label>
+                <input type="text" id="modulo4" name="modulo4" placeholder="Calificación de Redes"><br><br>
+
+                <label for="modulo5">Sostenibilidad: </label>
+                <input type="text" id="modulo5" name="modulo5" placeholder="Calificación de Sostenibilidad"><br><br>
+
+                <label for="modulo6">Digitalización: </label>
+                <input type="text" id="modulo6" name="modulo6" placeholder="Calificación de digitalización"><br><br>
+            </fieldset>
+            <button onclick="hacermedia()" type="submit">Calcular media</button>
+        </form>
+        <script>
+            function hacermedia(){
+                event.preventDefault();
+                let modulos = []; 
+                for(let i = 1; i<=6; i++){
+                    let valorCaja1 = document.getElementById('input' + i).value;
+                    if(valorCaja1 === ""){
+                    alert('Por favor, ingresa un número.'); 
+                    return; 
+                    }
+                    let valorCaja2 = valorCaja1.replace(',', '.');
+                    if(isNaN(valorCaja2)){
+                        alert('No es un valor numérico.');
+                        return;
+                    }
+                    else{
+                        let valorCaja3 = parseFloat(valorCaja2);
+                        
+                    }                   
+                }
+            };
+        </script>
+    </div>
+</body>
+</html>
