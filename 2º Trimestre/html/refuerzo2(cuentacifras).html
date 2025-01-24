@@ -21,6 +21,7 @@
             if(isNaN(numeroEntrada) || numeroEntrada === ''){
                 alert('Introduce un número entero positivo');
                 return;
+                // isNaN no es necesario porque number.isInteger() ya realiza esa función mientras que también comprueba si es entero.
             }
             let numeroReal = parseFloat(numeroEntrada);
             let numeroPositivo;
