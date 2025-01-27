@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestor de Arrays</title>
     <style>
-       p{
-        width: 600px;
-        height: 15px;
-       } 
+       label{
+        display: block;
+        margin-top: 40px;
+       }
     </style>
-    <script src="../javascript/gestor.js"></script>
+    <script src="../javascript/numeros.js"></script>
 </head>
 <body>
     <h1>Gestor de Arrays</h1>
@@ -19,12 +19,15 @@
         <input type="text" name="numero" id="numero">
         <p id="mostrar"></p>
         <p id="media"></p>
-        <button type="submit" onclick="anadir(event)">Añadir elemento</button>
-        <button type="submit" onclick="mostrar(event)">Mostrar</button>
-        <button type="submit" onclick="mediaAritmetica(event)">Media aritmética</button>
-        <button type="submit" onclick="grande(event)">Número más grande</button>
-        <button type="submit" onclick="pequeno(event)">Número más pequeño</button>
-        <button type="submit" onclick="posicion(event)">Posición de un número</button>
+        <button type="submit" onclick="anadir(event)">Añadir número</button>
+        <button type="submit" onclick="mostrar(event)">Mostrar números</button>
+        <button type="button" onclick="suma()">Sumar números</button>
+        <button type="button" onclick="grande()">Número más grande</button>
+        <button id type="button" onclick="pequeno()">Número más pequeño</button>
+        <label for="posicion">Insertar número para saber su posición</label>
+        <input type="text" name="posicion" id="posicion">
+        <p id="pos"></p>
+        <button type="button" onclick="posicion_array()">Posición de un número</button>
     </form>
 </body>
 </html>
