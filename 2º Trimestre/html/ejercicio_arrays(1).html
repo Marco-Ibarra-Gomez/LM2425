@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            var array = [];
+            let i = 0;
+        function agregar_elemento(){
+            var elemento = document.getElementById("array_p").value;
+            array.push(elemento);
+            for(i; i<array.length; i++){
+                document.getElementById("el_array").innerHTML += array[i] + ", ";
+            }
+        }
+        function borrar_elemento(){
+            array.pop();
+            for(i; i>array.length; i--){
+            document.getElementById("el_array").innerHTML = array + " ";
+            }
+        }
+        function ordenar_elemento(){
+            document.getElementById("el_array").innerHTML = array.sort() + " ";
+        }
+        function reverse(){
+            array.sort();
+            document.getElementById("el_array").innerHTML = array.reverse();
+        }
+        function encontrar(){
+            var posicion = Number(document.getElementById("array_b").value);
+            document.getElementById("el_array2").innerHTML = array[posicion];
+        }
+    </script>
+</head>
+<body>
+    <head>
+        <h1>Array personal</h1>
+    </head>
+    <label for="elemento_">Elemento</label>
+        <input type="text" name="" id="array_p">
+        <button onclick="agregar_elemento()">Añadir</button>
+        <button onclick="borrar_elemento()">Eliminar último Elemento</button>
+        <button onclick="ordenar_elemento()">Ordenar</button>
+        <button onclick="reverse()">Reversa</button><br><br>
+    <label for="numero">Número</label>
+        <input type="number" id="array_b">
+        <button onclick="encontrar()">Encontrar valor</button><br><br>
+
+        <p id="el_array"></p>
+        <p id="el_array2"></p>
+</body>
+</html>
+   

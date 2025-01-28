@@ -3,29 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio Arrays</title>
+    <title>Manipulación de Array</title>
 </head>
 <body>
-    <form action="">
-        <fieldset>
-            <legend>Array</legend>
-            <input type="text" name="" id="caja"><br>
-            <input type="button" onclick="añadir()" value="Añadir elemento"><br><br>
-            <input type="button" id="eliminar" value="Eliminar elemento"><br><br>
-            <input type="button" id="creciente" value="Ordenar de manera creciente"><br><br>
-            <input type="button" id="decreciente" value="Ordenar de manera decreciente"><br><br>
-            <input type="text" name="" id="">
-            <p id="texto_js"></p>
-        </fieldset>
+    <h2>Manipulación de Array</h2>
+    <form>
+        <label for="numero">Introduce un número:</label>
+        <input type="text" id="numero">
+        <button onclick="anadir(event)">Añadir Elemento</button>
+        <button onclick="eliminar(event)">Eliminar Elemento</button>
+        <button onclick="ordenarAsc(event)">Ordenar Ascendente</button>
+        <button onclick="ordenarDesc(event)">Ordenar Descendente</button>
+        <button onclick="buscar(event)">Buscar Elemento</button>
     </form>
+    <p id="mostrar"></p>
+    <p id="resultado"></p>
+
     <script>
         let array = [];
-        function añadir(){
-            
-            let añadir_e = document.getElementById("caja").value;
-            array.push(añadir_e);
-            let parrafo1 = document.getElementById("texto_js");
-            parrafo1.innerHTML = array.join(', ');
+
+        function anadir(event) {
+            event.preventDefault();
+            let valorArray0 = document.getElementById("numero").value;
+            let valorArray1;
+            if(isNaN(valorArray0) || valorArray0 === ''){
+                alert('Por favor, ingresa un número');
+            } else {
+                valorArray1 = parseFloat(valorArray0.replace(',', '.'));
+                array.push(valorArray1);
+                mostrar();
+            }
+        }
+
+        function eliminar(event) {
+            event.preventDefault();
+            let valorArray0 = document.getElementById("numero").value;
+            let valorArray1;
+            if(isNaN(valorArray0) || valorArray0 === ''){
+                alert('Por favor, ingresa un número');
+            } else {
+                valorArray1 = parseFloat(valorArray0.replace(',', '.'));
+                const index = array.indexOf(valorArray1);
+                if(index !== -1) {
+                    array.splice(index, 1);
+                } else {
+                    alert('El número no se encuentra en el array');
+                }
+                mostrar();
+            }
+        }
+
+        function mostrar() {
+            if(array.length === 0){
+                document.getElementById("mostrar").innerHTML = 'El array está vacío.';
+            } else {
+                document.getElementById("mostrar").innerHTML = 'Array: ' + array.join(', ');
+            }
+        }
+
+        function ordenarAsc(event) {
+            event.preventDefault();
+            array.sort((a, b) => a - b);
+            mostrar();
+        }
+
+        function ordenarDesc(event) {
+            event.preventDefault();
+            array.sort((a, b) => b - a);
+            mostrar();
+        }
+
+        function buscar(event) {
+            event.preventDefault();
+            let valorArray0 = document.getElementById("numero").value;
+            let valorArray1;
+            if(isNaN(valorArray0) || valorArray0 === ''){
+                alert('Por favor, ingresa un número');
+            } else {
+                valorArray1 = parseFloat(valorArray0.replace(',', '.'));
+                const index = array.indexOf(valorArray1);
+                if(index !== -1) {
+                    document.getElementById("resultado").innerHTML = 'Elemento encontrado en la posición: ' + index;
+                } else {
+                    document.getElementById("resultado").innerHTML = 'Elemento no encontrado.';
+                }
+            }
         }
     </script>
 </body>

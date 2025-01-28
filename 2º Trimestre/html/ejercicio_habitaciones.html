@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Habitaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            display: inline-block;
+            text-align: left;
+        }
+        .container input, .container button {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Habitaciones</h2>
+        <label for="adultos">Número de adultos:</label>
+        <input type="number" id="adultos" min="0">
+        <label for="ninos">Número de niños:</label>
+        <input type="number" id="ninos" min="0">
+        <button onclick="calcularHabitaciones()">Calcular</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularHabitaciones() {
+            const adultos = parseInt(document.getElementById('adultos').value);
+            const ninos = parseInt(document.getElementById('ninos').value);
+            let dobles = 0;
+            let doblesSupletoria = 0;
+            let triples = 0;
+            let familiares = 0;
+            let adultosRestantes = adultos;
+            let ninosRestantes = ninos;
+
+            while (adultosRestantes >= 2 && ninosRestantes >= 2) {
+                familiares++;
+                adultosRestantes -= 2;
+                ninosRestantes -= 2;
+            }
+
+            while (adultosRestantes >= 2 && ninosRestantes >= 1) {
+                doblesSupletoria++;
+                adultosRestantes -= 2;
+                ninosRestantes -= 1;
+            }
+
+            while (adultosRestantes >= 3) {
+                triples++;
+                adultosRestantes -= 3;
+            }
+
+            while (adultosRestantes > 0) {
+                if (adultosRestantes >= 2) {
+                    dobles++;
+                    adultosRestantes -= 2;
+                } else {
+                    dobles++;
+                    adultosRestantes -= 1;
+                }
+            }
+
+            const resultado = `Habitaciones necesarias:
+                Dobles: ${dobles}
+                Dobles con supletoria: ${doblesSupletoria}
+                Triples: ${triples}
+                Familiares: ${familiares}`;
+            document.getElementById('resultado').innerText = resultado;
+        }
+    </script>
+</body>
+</html>
