@@ -1,0 +1,56 @@
+1.- Primero se instala UBUNTU SERVER y en este proceso de confirma el SSH.
+2.- Luego se siguen las instrucciones de esta página: https://phoenixnap.com/kb/how-to-install-lamp-in-ubuntu
+3.- Tras llegar al paso 2 de la web e instalar mysql-service se va al link siguiente: https://phoenixnap.com/kb/mysql-secure-installation y se siguen los pasos hasta lograr cambiar la contraseña. En caso de que no lo permita, simplemente presionamos "y" al resto de opciones
+4.- Cuando vayamos al paso 3 de la web para instalar PHP, tenemos que escribir: "sudo apt install php libapache2-mod-php php-mysql phpmyadmin -y"
+en vez de el comando "sudo apt install php libapache2-mod-php php-mysql -y". Esto para poder instalar phpmyadmin. Mientras lo instalamos, nos saldrán dos opciones, presionamos la tecla espacio en la primera y luego presionamos "ok". Tras esto nos pedirá configurar algo de db-common. Simplemente escogemos "No".
+5.- Seguimos todos los pasos y llegamos al paso 6 de la web. En este caso en "username" ponemos el usuario que vamos a crear (el mío es "marco"), en "password" ponemos la contraseña que le vamos a asignar (yo le puse una compleja porque si no, no deja crearlo) y por último en "database_name" ponemos el nombre de la base de datos que hemos creado (en mi caso es "bd_marco").
+6.- Lo siguiente es acceder a mysql mediante root. Para ello escribimos:
+    sudo mysql
+
+    Y nos pedirá la contraseña por defecto del usuario de nuestro ubuntu (ya que es la que está usando por defecto por algún motivo)
+
+    Dentro de la terminal vamos a escribir lo siguiente para cambiar la contraseña del root:
+        ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'nueva_contraseña';
+
+    Despues de cambiar el parámetro 'nueva_contraseña' por nuestra contraseña (que por cierto, debe ser compleja porque si no, no deja cambiarla) escribimos lo siguiente: 
+        FLUSH PRIVILEGES;
+
+    Y luego:
+        EXIT;
+
+    Ahora podemos acceder al root usando la nueva contraseña mediante el comando:
+        mysql -u root -p
+
+    Tras esto volvemos a acceder al root y creamos la base de datos: 
+        CREATE DATABASE nombre_base_de_datos;
+
+    Verificamos que la base de datos se ha creado:
+        SHOW DATABASES;
+
+    Y nos salimos:
+    EXIT
+
+    Ahora lo siguiente es crear el usuario a través del root y asignarle la base de datos creada:
+        CREATE USER 'nuevo_usuario'@'localhost' IDENTIFIED BY 'nueva_contraseña';
+
+    En 'nuevo_usuario' colocamos el usuario que queremos (en este caso debería ser el usuario que pusimos en el documento nano del "5.-" y en 'nueva_contraseña' colocamos la contraseña (que debe ser compleja y además debe ser igual a la del documento nano del "5.-"). Y tras esto le damos privilegios a la nueva base de datos:
+        GRANT ALL PRIVILEGES ON nombre_base_de_datos.* TO 'nuevo_usuario'@'localhost';
+
+    Si queremos darle privilegios a todas las bases de datos podemos escribir:
+        GRANT ALL PRIVILEGES ON *.* TO 'nuevo_usuario'@'localhost';
+
+    Y por último escribimos:
+        FLUSH PRIVILEGES;
+
+    Podemos ver que el usuario se ha creado mediante: 
+        SELECT User, Host FROM mysql.user;
+
+    Por último, nos salimos y accedemos al nuevo usuario mediante:
+        mysql -u 'nuevo_usuario' -p
+
+    Y tras entrar con la contraseña probamos que accede a la nueva base de datos mediante:
+        USE nombre_base_de_datos;
+
+7.- Lo siguiente sería seguir el resto de pasos y probar la conexión a la base de datos mediante "http://nuestra_ip/dbtest.php". Si funciona correctamente nos dirigimos otra vez al buscador de la web y escribimos: "http://nuestra_ip/phpmyadmin" y desde allí podremos acceder mediante el root y su nueva contraseña o a través de nuestro nuevo usuario.
+
+
