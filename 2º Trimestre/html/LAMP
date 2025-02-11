@@ -54,3 +54,11 @@ en vez de el comando "sudo apt install php libapache2-mod-php php-mysql -y". Est
 7.- Lo siguiente sería seguir el resto de pasos y probar la conexión a la base de datos mediante "http://nuestra_ip/dbtest.php". Si funciona correctamente nos dirigimos otra vez al buscador de la web y escribimos: "http://nuestra_ip/phpmyadmin" y desde allí podremos acceder mediante el root y su nueva contraseña o a través de nuestro nuevo usuario.
 
 
+Lo siguiente es instalar wordpress. Para ello nos vamos a la web de wordpress y hacemos click derecho en
+"Download WordPress". Nos vamos a www mediante "cd /var/www" y en la terminal escribimos "https://wordpress.org/latest.zip". Luego de instalar la librería, debemos escribir "sudo apt install unzip" y se instalará el descompresor de paquetes. Escribimos "sudo unzip latest.zip" y tras descomprimirse debemos escribir "sudo mv wordpress/* html/". Tras haber movido el directorio debemos irnos a la web y escribir "http://192.168.3.39/index.php" (esa es mí ip) y nos dejará usar wordpress en nuestro LAMP.
+
+En caso de no crear la base de datos desde MYSQL la podemos crear desde PHPmyadmin a través del root. Luego, dentro pinchamos en "Base de datos" y en "Crear base de datos" escogemos un nombre y escogemos la codificación española "utf8..._spanish_ci" y la creamos. Luego en Wordpress colocamos los datos del root y el nombre de la base de datos además de que en DatabaseHost lo dejamos en "localhost" y el tablePrefix lo dejamos en "wp_(numeros cualquiera)_" (lo de números cualquiera es poner varios numeros aleatorios para tener más seguridad).
+
+Luego de eso, nos vamos al directorio "html" mediante "cd /var/www/html" y escribimos 
+"sudo nano wp-config.php" y pegamos lo que tenemos que copiar en la página siguiente al agregar los datos del wordpress en index.php
+
