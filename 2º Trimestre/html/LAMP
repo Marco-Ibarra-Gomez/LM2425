@@ -60,5 +60,5 @@ Lo siguiente es instalar wordpress. Para ello nos vamos a la web de wordpress y 
 En caso de no crear la base de datos desde MYSQL la podemos crear desde PHPmyadmin a través del root. Luego, dentro pinchamos en "Base de datos" y en "Crear base de datos" escogemos un nombre y escogemos la codificación española "utf8..._spanish_ci" y la creamos. Luego en Wordpress colocamos los datos del root y el nombre de la base de datos además de que en DatabaseHost lo dejamos en "localhost" y el tablePrefix lo dejamos en "wp_(numeros cualquiera)_" (lo de números cualquiera es poner varios numeros aleatorios para tener más seguridad).
 
 Luego de eso, nos vamos al directorio "html" mediante "cd /var/www/html" y escribimos 
-"sudo nano wp-config.php" y pegamos lo que tenemos que copiar en la página siguiente al agregar los datos del wordpress en index.php
+"sudo nano wp-config.php" y pegamos lo que tenemos que copiar en la página siguiente al agregar los datos del wordpress en index.php)
 
