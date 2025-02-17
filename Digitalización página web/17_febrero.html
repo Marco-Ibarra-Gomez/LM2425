@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Sortable - Display as grid</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+
+        div {
+            clear: left;
+        }
+
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 450px;
+        }
+
+        #sortable li {
+            margin: 3px 3px 3px 0;
+            padding: 1px;
+            float: left;
+            width: 300px;
+            height: 90px;
+            font-size: 2em;
+            text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+
+            $("#button").click(() => {
+                let orderArray = [];
+
+                $("#sortable li").each(function() {
+                    orderArray.push($(this).text().trim());
+                });
+
+                if(orderArray[0]=="Malware" && 
+                   orderArray[1]=="IoP" &&
+                   orderArray[2]=="Phishing" &&
+                   orderArray[3]=="Violaciones de datos" &&
+                   orderArray[4]=="DoS" &&
+                   orderArray[5]=="Motores de búsqueda" &&
+                   orderArray[6]=="Dark Web" &&
+                   orderArray[7]=="Dirección IP" &&
+                   orderArray[8]=="Hacker" &&
+                   orderArray[9]=="Ciberdelincuente" &&
+                   orderArray[10]=="Monitoreo no autorizado" &&
+                   orderArray[11]=="Fallos en la autenticación")
+                {
+                    $("#resultado").html("<strong>CORRECTO - </strong>");
+                }
+                else
+                {
+                    $("#resultado").text("ERROR - ");
+                }
+
+                $("#resultado").append(orderArray.join(", "));
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Los riesgos en las tecnologías y la ciberdelincuencia</h1>
+
+    <div>
+        <h1>Definiciones</h1>
+
+        <h3>1. Software malicioso diseñado para añar, acceder o tomar el control de sistemas informáticos.</h3>
+        <h3>2. Nuevo concepto que alude a la posibilidad de que los dispositivos electrónicos realicen compras sin mediación humana.</h3>
+        <h3>3. Intentos de engañar a usuarios para obteer información confidencial</h3>
+        <h3>4. Acceso no autorizado a la información personal o sensible</h3>
+        <h3>5. Enviar a un servidor muchas solicitudes, de manera que se sobrecarga el sistema o la red y deja de funcionar correctamente.</h3>
+        <h3>6. Son algoritmos informáticos en la web. Recopilan datos, los seleccionan y muestran los resultados ordenados según su relevancia para el usuario. Los más habituales son Google, Bing y Yahoo</h3>
+        <h3>7. Es una parte de internet que se halla intencionalmente oculta a los motores de búsqueda, con direcciones IP enmascaradas y accesibles solo con un navegador web especial.</h3>
+        <h3>8. Es una etiqueta numérica asignada a cada dispositivo conectado a una red, para identificarlo y localizar su ubicación.</h3>
+        <h3>9. Es una persona con grandes habilidades en el manejo de computadoras que investiga un sistema informático para avisar de fallos y desarrollar técnicas de mejora.</h3>
+        <h3>10. Es una persona que utiliza sus habilidades informáticas para cometer delitos. Pretende acceder a la información confidencial de una empresa vulnerable que tiene los datos mal protegidos, recurriendo a todos los medios posibles, como malware, phishing, gusanos, virus, troyanos, etc.</h3>
+        <h3>11. Recopilación de datos sin el consentimiento del usuario</h3>
+        <h3>12. Acceso no autorizado debido a sistemas de autenticación débiles o contraseñas fáciles de adivinar.</h3>
+    </div>
+
+    <div>
+        <button id="button">Haz clic aquí para comprobar el resultado</button>
+    </div>
+
+    <div>
+        <p id="resultado"></p>
+    </div>
+
+    <div>
+        <ul id="sortable">
+            <li class="ui-state-default">IoP</li>
+            <li class="ui-state-default">Malware</li>
+            <li class="ui-state-default">Hacker</li>
+            <li class="ui-state-default">Motores de búsqueda</li>
+            <li class="ui-state-default">Dark Web</li>
+            <li class="ui-state-default">DoS</li>
+            <li class="ui-state-default">Ciberdelincuente</li>
+            <li class="ui-state-default">Phishing</li>
+            <li class="ui-state-default">Violaciones de datos</li>
+            <li class="ui-state-default">Dirección IP</li>
+            <li class="ui-state-default">Monitoreo no autorizado</li>
+            <li class="ui-state-default">Fallos en la autenticación</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
