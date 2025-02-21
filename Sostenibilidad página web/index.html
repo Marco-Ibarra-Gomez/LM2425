@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Dialog - Animation</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            /* Todos los elementos "div" cuya clase sea "dialog", son elementos que se convertirán en cuadros de diálogo. */
+            $("div.dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                show: {
+                    effect: "blind",
+                    duration: 500
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 500
+                }
+            });
+
+            /* Cada elemento con id "openerX", siendo la "X" un número, será el botón que abrirá el cuadro de diálogo correspondiente. */
+            $("#opener1").on("click", function () {
+                $("#dialog1").dialog("open");
+            });
+
+            $("#opener2").on("click", function () {
+                $("#dialog2").dialog("open");
+            });
+
+            $("#opener3").on("click", function () {
+                $("#dialog3").dialog("open");
+            });
+
+            $("#opener4").on("click", function () {
+                $("#dialog4").dialog("open");
+            });
+
+            $("#opener5").on("click", function () {
+                $("#dialog5").dialog("open");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Título de la página -->
+    <h1>Resumen 21 de Febrero</h1>
+
+    <!-- Contenido del primer cuadro de diálogo. Esto no se muestra inicialmente en la página. -->
+    <div id="dialog1" class="dialog" title="Economía circular">
+        <p>En el modelo de economía circular, el valor de los recursos y los productos se mantiene durante el mayor tiempo posible, lo que permite generar la menor cantidad de residuos posible.</p>
+        <img src="economia-circular.png" alt="economía circular" width="267" height="140">
+    </div>
+
+    <!-- Este botón, el primero, hace que se abra el "div" anterior, el del primer contenido. -->
+    <button id="opener1">Economía circular</button>
+
+    <!-- Contenido del segundo cuadro de diálogo. Esto no se muestra inicialmente en la página. -->
+    <div id="dialog2" class="dialog" title="Principios de la economía circular: las 7 R">
+        <p>La economía circular plantea siete principios para ello, conocidos como las 7 R:</p>
+        <ol>
+            <li><b>Rediseñar:</b></li> los productos, de modo que su fabricación y uso requieran menos energía y recursos.</li>
+            <li><b>Reducir:</b> el consumo de productos y servicios por parte de los hogares.</li>
+            <li><b>Renovar:</b> los productos que ya tenemos para darles un nuevo uso.</li>
+            <li><b>Reparar:</b> la ropa, aparatos y otros productos para extender su vida útil.</li>
+            <li><b>Reutilizar:</b> objetos, dándoselos a otras personas para que los utilicen ellas o buscándoles otro uso</li>
+            <li><b>Recuperar:</b> productos o envases que desechamos dándoles un nuevo uso en el proceso de producción.</li>
+            <li><b>Reciclar:</b> materiales desechados, transformándolos para fabricar con ellos nuevos productos y servicios.</li>
+        </ol>
+    </div>
+
+    <!-- Este botón, el segundo, hace que se abra el "div" anterior, el del segundo contenido. -->
+    <button id="opener2">Principios de la economía circular: las 7 R</button>
+
+    <!-- Contenido del tercer cuadro de diálogo. Esto no se muestra inicialmente en la página. -->
+    <div id="dialog3" class="dialog" title="Desmaterialización y descarbonización">
+        <p>¿Qué son?</p>
+        <ul>
+            <li>La <b>desmaterialización</b> consiste en la reducción de las necesidades de materiales para la producción.</li>
+            <li>La <b>descarbonización</b> se refiere a la reducción de dióxido de carbono y otros gases responsables del efecto invernadero.</li>
+        </ul>
+    </div>
+
+    <!-- Este botón, el tercer, hace que se abra el "div" anterior, el del tercer contenido. -->
+    <button id="opener3">Desmaterialización y descarbonización</button>
+
+
+    <!-- Contenido del tercer cuadro de diálogo. Esto no se muestra inicialmente en la página. -->
+    <div id="dialog4" class="dialog" title="Beneficios de la economía verde y circular">
+        <p>Los beneficios son varios:</p>
+        <ul>
+            <li>Reduce el efecto invernadero y combate el cambio climático.</li>
+            <li>REduce el impacto medioambiental de la agricultura y la industria.</li>
+            <li>Preserva los recursos naturales y alarga la disponibilidad de los no renovables.</li>
+            <li>Genera nuevos empleos.</li>
+            <li>Incrementa las actividades de servicios.</li>
+            <li>Incentiva la cooperación entre personas, empresas y sector público.</li>
+        </ul>
+    </div>
+
+    <!-- Este botón, el tercer, hace que se abra el "div" anterior, el del tercer contenido. -->
+    <button id="opener4">Beneficios de la economía verde y circular</button>
+
+
+    <!-- Contenido del tercer cuadro de diálogo. Esto no se muestra inicialmente en la página. -->
+    <div id="dialog5" class="dialog" title="Beneficios para las empresas">
+        <p>Una empresa que apueste por la economía verde y circular obtendrá los siguientes beneficios:</p>
+        <ul>
+            <li>Eficiencia y ahorro de costes.</li>
+            <li>Sostenibilidad del modelo de negocio.</li>
+            <li>Fidelización de clientes y proveedores.</li>
+            <li>Satisfacción de la plantilla.</li>
+            <li>Refuerzo de la imagen de marca.</li>
+            <li>Menor riesgo legal.</li>
+        </ul>
+    </div>
+
+    <!-- Este botón, el tercer, hace que se abra el "div" anterior, el del tercer contenido. -->
+    <button id="opener5">Beneficios para las empresas</button>
+    
+
+</body>
+
+</html>
