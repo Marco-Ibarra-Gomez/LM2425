@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Droppable - Default functionality</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        .draggable {
+            width: 100px;
+            height: 100px;
+            padding: 0.5em;
+            float: left;
+            margin: 10px 10px 10px 0;
+        }
+
+        .droppable {
+            width: 150px;
+            height: 150px;
+            padding: 0.5em;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+
+        $(function () {
+
+            $.fn.comprobarRespuesta = function (idDraggableConPregunta, idPreguntaAsociada) {
+                return this.each(function () {
+
+                    if (idDraggableConPregunta == idPreguntaAsociada) {
+                        $(this).addClass("ui-state-highlight");
+
+                        $("#dialogAcierto" ).dialog("open");
+                    }
+                    else {
+                        $("#dialogError" ).dialog("open");
+                    }
+
+                })
+            }
+
+            $( "#dialogAcierto").dialog({
+                autoOpen: false,
+                modal: true
+            });
+
+            $( "#dialogError").dialog({
+                autoOpen: false,
+                modal: true
+            });
+
+
+            $(".draggable").draggable();
+
+            $(".droppable").droppable({
+                out: function (event, ui) {
+                    $(this).removeClass("ui-state-highlight");
+                }
+            });
+
+            $("#respuesta1").droppable({
+                drop: function (event, ui) {
+                    $("#respuesta1").comprobarRespuesta(ui.draggable[0].id, "pregunta1")
+                }
+            });
+
+            $("#respuesta2").droppable({
+                drop: function (event, ui) {
+                    $("#respuesta2").comprobarRespuesta(ui.draggable[0].id, "pregunta2")
+                }
+            });
+
+            $("#respuesta3").droppable({
+                drop: function (event, ui) {
+                    $("#respuesta3").comprobarRespuesta(ui.draggable[0].id, "pregunta3")
+                }
+            });
+
+            $("#respuesta4").droppable({
+                drop: function (event, ui) {
+                    $("#respuesta4").comprobarRespuesta(ui.draggable[0].id, "pregunta4")
+                }
+            });
+
+            $("#respuesta5").droppable({
+                drop: function (event, ui) {
+                    $("#respuesta5").comprobarRespuesta(ui.draggable[0].id, "pregunta5")
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="pregunta1" class="draggable ui-widget-content">
+        <p>¿Cuándo se convierte el dato en información?</p>
+    </div>
+
+    <div id="respuesta5" class="droppable ui-widget-header">
+        <p>Puede ser debido a 3 causas posibles:</p>
+        <ul>
+            <li>Dificultan enfocarse en lo relevante.</li>
+            <li>Son difíciles de entender.</li>
+            <li>Solo describen una parte de la realidad.</li>
+        </ul>
+    </div>    
+
+    <div id="respuesta1" class="droppable ui-widget-header">
+        <p>Un dato es una cantidad o un hecho sin analizar y que por sí solo no tiene significado alguno. Es esencial presentarlos de forma utilizable y en un contexto que les otorgue valor.</p>
+    </div>
+
+    <div id="respuesta2" class="droppable ui-widget-header">
+        <p>Son datos que han sido procesados y comunicados de tal manera que pueden ser entendidos e interpretados por el receptor.</p>
+    </div>
+
+    <div id="pregunta3" class="draggable ui-widget-content">
+        <p>¿Con la información es suficiente?</p>
+    </div>
+
+    <div id="pregunta4" class="draggable ui-widget-content">
+        <p>¿Cómo se convierten los datos en información?</p>
+    </div>
+
+    <div id="respuesta3" class="droppable ui-widget-header">
+        <p>La información puede ser procesada aún más para convertirse en conocimiento. Es entonces cuando resulta útil para tomar decisiones correctas.</p>
+    </div>
+
+    <div id="pregunta2" class="draggable ui-widget-content">
+        <p>¿Qué es la información?</p>
+    </div>
+
+    <div id="respuesta4" class="droppable ui-widget-header">
+        <p>Mediante las siguientes acciones:</p>
+        <ul>
+            <li>Datos.</li>
+            <li>Contextualizando.</li>
+            <li>Categorizando.</li>
+            <li>Calculando.</li>
+            <li>Condensando.</li>
+            <li>Información.</li>
+        </ul>
+    </div>
+
+    <div id="pregunta5" class="draggable ui-widget-content">
+        <p>¿Por qué las estadísticas y las cifras pueden paralizar o entorpecer?</p>
+    </div>
+
+    <div id="dialogError" title="Error">
+        <p>Has fallado</p>
+    </div>
+
+    <div id="dialogAcierto" title="Acierto">
+        <p>Has acertado</p>
+    </div>
+
+
+
+</body>
+
+</html>
