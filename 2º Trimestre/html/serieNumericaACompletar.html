@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>
+    function calcularSerie() {
+        // Obtener el valor del input y convertirlo a número
+        let n = parseInt(document.getElementById("n").value);
+        let resultado = document.getElementById("resultado");
+
+        // Comprobar si el número es inválido o menor que 1
+        if (isNaN(n) || n < 1) {
+            resultado.innerHTML = "Introduce un número entero positivo.";
+            return;
+        }
+
+        // Definir los dos primeros términos de la secuencia
+        let serie = [0, 1];
+
+        // Generar los términos de la secuencia
+        for (let i = 2; i < n; i++) {
+            serie.push(serie[i - 1] + serie[i - 2]);
+        }
+
+        // Mostrar la serie separada por espacios
+        resultado.innerHTML = serie.slice(0, n).join(" ");
+    }
+    </script>
+</body>
+</html>

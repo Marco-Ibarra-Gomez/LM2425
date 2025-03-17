@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor tareas</title>
+</head>
+<body>
+    <form action="">
+        <label for="tareas">Tareas</label>
+        <input type="text" name="" id="tareas">
+        <button type="button" onclick="anadir()">Añadir</button>
+        <button type="button" onclick="eliminar()">Eliminar</button>
+        <label for="buscar">Buscar tareas</label>
+        <input type="text" id="buscar">
+        <button type="button" onclick="buscarf()">Buscar</button>
+        <p id="mensaje"></p>
+        <p id="buscador"></p>
+    </form>
+    <script>
+        var array = [];
+        function anadir(){
+            var tareas = document.getElementById("tareas").value;
+            if(!isNaN(tareas) || tareas == ''){
+                document.getElementById("mensaje").innerHTML = 'No es una cadena de texto';
+            } else {
+                array.push(tareas);
+                document.getElementById("mensaje").innerHTML = array;
+            }
+        }
+        function eliminar(){
+            if(array.length>0){
+                array.pop();
+                document.getElementById("mensaje").innerHTML = array;
+            } else{
+                document.getElementById("mensaje").innerHTML = 'Añade tarea';
+            }
+        }
+        function buscarf(){
+            var buscar = document.getElementById("buscar").value;
+            if(array.indexOf(buscar) === -1){
+                document.getElementById("buscador").innerHTML = 'La tarea no existe';
+            }else{
+                document.getElementById("buscador").innerHTML = 'La tarea está en la lista';
+            }
+        }
+    </script>
+</body>
+</html>
