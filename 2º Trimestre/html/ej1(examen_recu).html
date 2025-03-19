@@ -1,0 +1,138 @@
+DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Concierto - Gestión de Entradas</title>
+
+  <style>
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <h1>Lista de Asistentes al Concierto</h1>
+
+
+
+  <form>
+
+    <!-- Campo de entrada para añadir persona -->
+
+    <label for="nombre">Nombre del asistente:</label>
+
+    <input type="text" id="nombre" placeholder="Introduce el nombre">
+
+    <button type="button" onclick="añadirPersona()">Añadir persona</button>
+
+
+
+    <!-- Botones para otras acciones -->
+
+    <button type="button" onclick="eliminarUltimaPersona()">Eliminar última persona</button>
+
+    <button type="button" onclick="eliminarPersonaEspecifica()">Eliminar persona específica</button>
+
+    <button type="button" onclick="mostrarLista()">Mostrar lista completa</button>
+
+    <button type="button" onclick="buscarPersona()">Buscar persona</button>
+
+
+
+    <div id="mensaje"></div> <!-- Aquí se mostrarán los mensajes -->
+
+    <div id="lista"></div>   <!-- Aquí se mostrará la lista de asistentes -->
+
+  </form>
+
+
+
+  <script>
+
+    // Array para gestionar la lista de asistentes
+    var listaAsistentes = [];
+    // Función para añadir una persona a la lista
+    function añadirPersona() {
+      var nombre = document.getElementById('nombre').value.trim();
+      if (nombre) {
+        listaAsistentes.push(nombre); // Añadir la persona al array
+        document.getElementById('nombre').value = ''; // Limpiar el campo de entrada
+        document.getElementById('mensaje').innerHTML = 'Se añadió a ' + nombre + ' a la lista.';
+      } else {
+        document.getElementById('mensaje').innerHTML = 'Por favor ingresa un nombre.';
+      }
+    }
+
+
+
+    // Función para eliminar la última persona añadida
+
+    function eliminarUltimaPersona() {
+      if (listaAsistentes.length > 0) {
+        var personaEliminada = listaAsistentes.pop(); // Eliminar la última persona
+        document.getElementById('mensaje').innerHTML = personaEliminada + ' fue eliminada de la lista.';
+      } else {
+        document.getElementById('mensaje').innerHTML = 'No hay personas para eliminar.';
+
+      }
+
+    }
+
+
+
+    // Función para eliminar una persona específica
+
+    function eliminarPersonaEspecifica() {
+      var nombre = document.getElementById("").value;
+      var indice = listaAsistentes.indexOf(nombre); // cambia lista de asistentes por el nombre de tu array
+      if (indice !== -1) {
+        listaAsistentes.splice(indice, 1); // Eliminar la persona del array
+        document.getElementById('mensaje').innerHTML = nombre + ' fue eliminada de la lista.';
+      } else {
+        document.getElementById('mensaje').innerHTML = 'No se encontró a esa persona en la lista.';
+      }
+    } // coge esto e intenta convertirlo a tu codigo
+
+
+
+    // Función para mostrar la lista completa de asistentes
+
+    function mostrarLista() {
+      var listaDiv = document.getElementById('lista');
+      if (listaAsistentes.length > 0) {
+        var listaHTML = '<h3>Lista de asistentes:</h3>';
+        for (var i = 0; i < listaAsistentes.length; i++) {
+          listaHTML += listaAsistentes[i] + '<br>';
+        }
+        listaDiv.innerHTML = listaHTML;
+      } else {
+        listaDiv.innerHTML = 'No hay asistentes en la lista.';
+      }
+    }
+
+
+
+    // Función para verificar si una persona está en la list
+    function buscarPersona() {
+      var nombre = prompt('Introduce el nombre para verificar si tiene entrada:').trim();
+      if (listaAsistentes.indexOf(nombre) !== -1) {
+        document.getElementById('mensaje').innerHTML = nombre + ' tiene entrada.';
+      } else {
+        document.getElementById('mensaje').innerHTML = nombre + ' no tiene entrada.';
+      }
+    }

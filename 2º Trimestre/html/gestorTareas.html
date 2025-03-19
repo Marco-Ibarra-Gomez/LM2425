@@ -38,10 +38,10 @@
         }
         function buscarf(){
             var buscar = document.getElementById("buscar").value;
-            if(array.indexOf(buscar) === -1){
-                document.getElementById("buscador").innerHTML = 'La tarea no existe';
+            if(!array.includes(buscar)){
+                document.getElementById("buscador").innerHTML = 'El asistente no existe';
             }else{
-                document.getElementById("buscador").innerHTML = 'La tarea está en la lista';
+                document.getElementById("buscador").innerHTML = 'El asistente está en la lista';
             }
         }
     </script>
