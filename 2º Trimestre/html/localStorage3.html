@@ -23,7 +23,7 @@
         function cargaListaTareas(){
             let tareas = JSON.parse(localStorage.getItem('tareas'));
             if(tareas != null){
-                document.getElementById('tareas').innerHTML = ArrayTareas;
+                document.getElementById('tareas').innerHTML = tareas;
             }else{
                 document.getElementById('tareas').innerHTML = 'No hay tareas guardadas';
             }
