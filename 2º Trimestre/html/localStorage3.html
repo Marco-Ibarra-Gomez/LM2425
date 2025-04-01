@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage3</title>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    <input type="text" name="" id="entrada" placeholder="">
+    <button onclick="agregarTarea()">Agregar</button>
+    <p id="tareas"></p>
+    <script>
+        let ArrayTareas = []; // Array para almacenar las tareas
+        function agregarTarea(){
+            let entrada = document.getElementById('entrada').value;
+            ArrayTareas.push(entrada);
+            if(entrada!=''){
+                localStorage.setItem('tareas', JSON.stringify(ArrayTareas));
+                document.getElementById('tareas').innerHTML = ArrayTareas;
+            }
+        }
+        function cargaListaTareas(){
+            let tareas = JSON.parse(localStorage.getItem('tareas'));
+            if(tareas != null){
+                document.getElementById('tareas').innerHTML = ArrayTareas;
+            }else{
+                document.getElementById('tareas').innerHTML = 'No hay tareas guardadas';
+            }
+        }
+        window.onload = cargaListaTareas;
+    </script>
+</body>
+</html>
