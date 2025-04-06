@@ -1,0 +1,255 @@
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+a{
+    text-align: center;
+    color: #98070a;
+    text-decoration: none;
+}
+main{
+    margin-top: 250px;
+    font-family: 'Montserrat';
+    font-weight: lighter;
+    font-weight: bold;
+}
+footer{
+    font-family: 'Montserrat';
+    font-weight: lighter;
+    font-weight: bold;
+}
+div.foto_c_a{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    margin-bottom: 300px;
+    justify-content: center;
+}
+.foto_c_a img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transition: 0.6s;
+    padding: 30px 20px;
+    text-decoration: none;
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: large;
+    z-index: 1;
+}
+header.abajo{
+    background-color: white;
+    padding: 15px 20px;
+}
+header.logo{
+    position: relative;
+    color: #dcdbe3;
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    position: relative;
+    margin: 0px 15px;
+    text-decoration: none;
+    color: #98070a;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+header.abajo .logo, header.abajo .encabezado, header.abajo ul li a{
+            color: black;
+            text-decoration: none;
+        }
+.flex-cont1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+}
+div.derecha, div.izquierda{
+    flex: 0 0 50%;
+}
+.flex-cont1 h1{
+    text-align: center;
+}
+.izquierda p{
+    text-align: center;
+    padding-left: 60px;
+    word-wrap: break-word;
+    flex-shrink: 1;
+    word-wrap: break-word;
+    white-space: normal;
+
+}
+.derecha img{
+    margin-left: 100px;
+    width: 500px;
+    max-height: 100%;
+}
+p{
+    color: white;
+}
+.izquierda h1{
+    color: white;
+}
+.flex-cont2{
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    color: white;
+    flex-direction: column;
+}
+.discografia_t{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+#zona1{
+    height: 140px;
+    width: 100%;
+}
+#zona2{
+    height: 90px;
+    width: 100%;
+}
+#zona3{
+    height: 80px;
+    width: 100%;
+}
+#zona4{
+    height: 80px;
+    width: 100%;
+}
+#zona5{
+    height: 120px;
+    width: 100%;
+}
+.img1{
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+}
+.text1{
+    display: flex;
+    height: 120px;
+    justify-content:space-around;
+    font-size: large;
+    padding-top: 20px;
+}
+.center1{
+    width: 33% ;
+    margin-left: 275px;
+}
+.center2{
+    width: 33%;
+    margin-left: 280px;
+}
+.center3{
+    width: 33%;
+    margin-left: 240px;
+}
+.center4{
+    width: 33% ;
+    margin-left: 250px;
+}
+.center5{
+    width: 33%;
+    margin-left: 265px;
+}
+.center6{
+    width: 33%;
+    margin-left: 315px;
+}
+.img2{
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+}
+.flex-cont3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    height: 1400px;
+}
+.exitos{
+    height: 100px;
+    padding-top: 35px;
+}
+.parrafos{
+    margin-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 220px;
+}
+.flex-cont4{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.flex-cont5{
+    display: flex;
+    flex-direction: column;
+    height: 1200px;
+    color: white;
+    width: 100%;
+    align-items: center;
+}
+.giras{
+    padding-top: 50px;
+    height: 100px;
+}
+.tabla1{
+    margin-top: 20px;
+}
+.tabla1, .tabla1 th, .tabla1 td, .tabla1 tr{
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+    width: 700px;
+}
+audio{
+    z-index: 0;
+}
+.img5{
+    display: flex;
+    height: 300px;
+    justify-content: space-evenly;
+    margin-top: 45px;
+}
+
+
