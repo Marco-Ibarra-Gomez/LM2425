@@ -1,68 +1,201 @@
 body{
     display: flex;
     min-height: 100vh;
-    font-family: "Century Gothic", Helvetica, arial, sans-serif;
     font-size: 1.1em;
-    background-color: #b8f3a2;
+    background: white;
     margin: 0;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 3000px;
+    font-family: 'Lato', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.descripcion, p, a, .envio_gratuito, header nav ul li a, .login-icon, .caja {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+.envio_gratuito{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: bold;
+    background-color: #6fcf24;
+}
+.envio_gratuito i{
+    margin-left: 5px;
+}
+.envio_gratuito h1{
+    width: 100%;
+    margin-right: 10px;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    height: 100px;
+    color: #6fcf24;
+}
+header h1{
+    display: flex;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+}
+header nav{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+header nav ul{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    text-align: center;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: #6fcf24;
+}
+header nav ul li{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+header nav ul li:hover{
+    background-color: #f2c94c;
+    transition: background-color 2.5s ease;
+}
+header a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+.login-icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: large;
+    color: #6fcf24;
+    margin: 10px;
+}
+.login-icon:hover {
+    color: #f2c94c;
+    transition: color 1.7s ease;
+}
+.login-icon i {
+    margin-right: 5px;
+}
+.fondo {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+}
+
+.fondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+.contenedor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.titulo {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+}
+
+.descripcion {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #555;
+}
+.cajas-inferiores {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.caja {
+    background-color: #d8f8e1;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 150px;
+    max-width: 250px;
+    font-weight: bold;
+    color: #2b4d3b;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.caja:hover{
+    background-color: #6fcf24;
+    color: white;
 }
 #contenedor{
     display: flex;
     flex-direction: row;
-    margin: 0;
-    padding: 0;
-    flex: 1 1 auto;
-}
-nav ul li{
-    text-decoration: none;
-    list-style: none;
-}
-nav a{
-        display: block;
-        padding: 0.5em 1em;
-        color: white;
-        text-decoration: none;
-        border-bottom: solid rgba(255, 255, 255, 0.3);
-}
-
-a{
-    text-align: center;
-    color: #98070a;
-    text-decoration: none;
-}
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 1500px;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    transition: 0.6s;
-    padding: 30px 20px;
-    text-decoration: none;
-    font-family: 'Oswald';
-    font-weight: bold;
-    font-size: large;
-    z-index: 1;
-    background-color: white;
+    margin: 0;
+    padding: 0 70px 0;
 }
-header ul{
+#presentacion{
+    width: 100%;
+    height: 400px;
+    padding-top: 40px;
+    text-align: center;
+
+}
+#presentacion h1{
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-decoration: none;
+    font-size: 40px;
+    color: #6fcf24;
+    padding-bottom: 30px;
 }
-header ul li{
-    list-style: none;
-    font-size: medium;
+hr{
+    display: flex;
+    width: 50%;
+    margin: 50px auto;
+    border: 1px solid #6fcf24;
 }
-header ul li a{
-    position: relative;
-    margin: 0px 15px;
-    text-decoration: none;
-    color: #98070a;
-    letter-spacing: 2px;
-    font-weight: 500;
-    transition: 0.5s;
+#articulos{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
 }

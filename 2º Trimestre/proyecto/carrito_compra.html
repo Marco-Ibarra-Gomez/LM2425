@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="carrito_compra.css">
+    <script src="carrito_compra.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/56d8a0b41b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lato&display=swap" rel="stylesheet">
     <title>Floristería</title>
 </head>
 <body>
-    <div id="envio_gratuito">
-        <p>Estás a solo 20€ del envío gratuito.</p>
+    <div class="envio_gratuito">
+        <p>Estás a solo 20€ del envío gratuito</p>
+        <i class="fa-solid fa-truck-fast"></i>
     </div>
     <header id="cabecera">
         <h1>Natura</h1>
@@ -20,11 +25,27 @@
                 <li><a href="#"><b>Ramos menos de 15€</b></a></li>
                 <li><a href="#"><b>Flores</b></a></li>
             </ul>
+            <a href="#" class="login-icon">
+                <i class="fa-brands fa-pagelines"></i> Iniciar sesión
+            </a>            
         </nav>
     </header>
+    <div class="fondo">
+        <img src="amarillo_fondo.jpeg" alt="fondo flores">
+        <div class="contenedor">
+            <h1 class="titulo">¿Que flores vas a regalar?</h1>
+            <p class="descripcion">Escoge entre los dos tipos de arreglos en tendencia actualmente en nuestra web</p>
+            
+            <div class="cajas-inferiores">
+              <div class="caja">Arreglo de Rosas</div>
+              <div class="caja">Arreglo de tulipanes</div>
+            </div>
+          </div>
+    </div>
     <div id="contenedor">
         <main id="cuerpo">
             <section id="presentacion">
+                <h1>Bienvenido a Natura</h1>
                 <p>
                     En Natura, llevamos cinco años dedicados a dar vida y color a cada rincón. Nuestro amor por las flores y plantas nos ha llevado a crear un espacio único, donde cada detalle refleja nuestra pasión por la naturaleza y el compromiso con la calidad.
                     Ubicados en el corazón de Sevilla, combinamos la belleza y frescura de nuestras flores con el conocimiento experto de nuestro equipo. Aquí encontrarás desde arreglos florales personalizados para ocasiones especiales, hasta plantas que transformarán tu hogar en un oasis de paz y estilo.
@@ -38,44 +59,49 @@
                 <p>    
                     Déjanos ser parte de tus momentos más especiales. En Natura, la naturaleza florece contigo.
                 </p>
+                <hr>
             </section>
             <section id="articulos">
-                <div id="id1"> <!-- En stock -->
-                    <img src="hera.jpg" alt="Hera" width="200" height="200">
-                </div>
-                <div id="id1"> <!-- En stock -->
-                    <img src="tulipanes_multicolor.jpeg" alt="Tulipanes_multicolor" width="200" height="200">
-                </div>
-                <div id="id1"> <!-- En stock -->
-                    <img src="margaritas.jpg" alt="Margaritas" width="200" height="200">
-                </div>
-                <div id="id1"> <!-- En stock -->
-                    <img src="arreglo_24_rosas.jpg" alt="Arreglo_rosas" width="200" height="200">
-                </div>
-                <div id="id1">
-                   <img src="cactus.jpeg" alt="Cáctus" width="200" height="200">
-                </div>
-                <div id="id1">
-                    <img src="orquidea.jpg" alt="orquídea" width="200" height="200">
-                </div>
-                <div id="id1">
-                    <img src="lirios_especiales.jpg" alt="lirios" width="200" height="200">
-                </div>
-                <div id="id1">
-                    <img src="helecho.jpeg" alt="helecho" width="200" height="200">
-                </div>
-                <div id="id1">
-                    <img src="bonsai.jpg" alt="img" width="200" height="200">
-                </div>
+                    <div id="id1"> <!-- En stock -->
+                        <img src="hera.jpg" alt="Hera" width="300" height="300">
+                        <h3>Hera</h3>
+                    </div>
+                    <div id="id2"> <!-- En stock -->
+                        <img src="tulipanes_multicolor.jpeg" alt="Tulipanes_multicolor" width="300" height="300">
+                        <h3>Tulipanes Multicolor</h3>
+                    </div>
+                    <div id="id3"> <!-- En stock -->
+                        <img src="margaritas.jpg" alt="Margaritas" width="300" height="300">
+                        <h3>Margaritas</h3>
+                    </div>
+                    <div id="id4"> <!-- En stock -->
+                        <img src="arreglo_24_rosas.jpg" alt="Arreglo_rosas" width="300" height="300">
+                        <h3>Arreglo de 24 rosas</h3>
+                    </div>
+                    <div id="id5">
+                        <img src="cactus.jpeg" alt="Cáctus" width="300" height="300">
+                        <h3>Cáctus</h3>
+                    </div>
+                    <div id="id6">
+                        <img src="orquidea.jpg" alt="orquídea" width="300" height="300">
+                        <h3>Orquidea</h3>
+                    </div>
+                    <div id="id7">
+                        <img src="lirios_especiales.jpg" alt="lirios" width="300" height="300">
+                        <h3>Lirios</h3>
+                    </div>
+                    <div id="id8">
+                        <img src="helecho.jpeg" alt="helecho" width="300" height="300">
+                        <h3>Helecho</h3>
+                    </div>
+                    <div id="id9">
+                        <img src="bonsai.jpg" alt="img" width="300" height="300">
+                        <h3>Bonsai</h3>
+                    </div>
             </section>
         </main>
-        <aside id="publicidad">
-            <img src="" alt="">
-            <img src="" alt="">
-            <video autoplay muted loop width="300" height="300">
-                <source src="MediaMarkt.mp4" type="video/mp4">
-                Tu navegador no soporta el formato de video.
-              </video>              
+        <aside id="barra_lateral">
+
         </aside>
     </div>
     <footer id="pie_pagina">
