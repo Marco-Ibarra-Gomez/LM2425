@@ -35,17 +35,59 @@
             </a>
         </div>
     </header>
+    <div id="carrito">
+        <div id="carrito_nav">
+            <h1>Carrito de compra</h1>
+            <button onclick="desaparecer()">X</button>
+        </div>
+        <hr>
+        <div class="item" id="item1"> <!-- En stock -->
+            <img src="hera.jpg" alt="Hera" width="100" height="100">
+            <h3>Hera</h3>
+            <div class="botonera">
+                <button onclick="quitar(0)" id="eliminar">-</button>
+                <input type="number" name="" id="id0" value="0" disabled>
+                <button onclick="anadir(0)" id="agregar">+</button>
+            </div>
+        </div>
+        <div class="item" id="item2"> <!-- En stock -->
+            <img src="tulipanes_multicolor.jpeg" alt="Tulipanes_multicolor" width="100" height="100">
+            <h3>Tulipanes <br> Multicolor</h3>
+            <div class="botonera">
+                <button onclick="quitar(0)" id="eliminar">-</button>
+                <input type="number" name="" id="id0" value="0" disabled>
+                <button onclick="anadir(0)" id="agregar">+</button>
+            </div>
+        </div>
+        <div class="item" id="item3"> <!-- En stock -->
+            <img src="margaritas.jpg" alt="Margaritas" width="100" height="100">
+            <h3>Margaritas</h3>
+            <div class="botonera">
+                <button onclick="quitar(0)" id="eliminar">-</button>
+                <input type="number" name="" id="id0" value="0" disabled>
+                <button onclick="anadir(0)" id="agregar">+</button>
+            </div>
+        </div>
+        <div class="item" id="item4"> <!-- En stock -->
+            <img src="arreglo_24_rosas.jpg" alt="Arreglo_rosas" width="100" height="100">
+            <h3>Arreglo de 24 rosas</h3>
+            <div class="botonera">
+                <button onclick="quitar(0)" id="eliminar">-</button>
+                <input type="number" name="" id="id0" value="0" disabled>
+                <button onclick="anadir(0)" id="agregar">+</button>
+            </div>
+        </div>
+        <button id="finalizar">Finalizar compra</button>
+    </div>
     <div class="fondo">
-        <img src="amarillo_fondo.jpeg" alt="fondo flores">
         <div class="contenedor">
             <h1 class="titulo">¿Que flores vas a regalar?</h1>
             <p class="descripcion">Escoge entre los dos tipos de arreglos en tendencia actualmente en nuestra web</p>
-            
             <div class="cajas-inferiores">
               <div class="caja">Arreglo de Rosas</div>
               <div class="caja">Arreglo de tulipanes</div>
             </div>
-          </div>
+        </div>
     </div>
     <div id="contenedor">
         <main id="cuerpo">
@@ -123,14 +165,33 @@
                         <img src="fuera_stock.png" alt="" width="120" height="60">
                     </div>
             </section>
-            <button>Realizar compra</button>
+            <div id="caja_b">
+                <button class="realizar_compra" onclick="realizar()">Realizar compra</button>
+            </div>
         </main>
-        <aside id="barra_lateral">
-
-        </aside>
     </div>
-    <footer id="pie_pagina">
-        <p>© 2025 Natura</p>
+    <footer id="pie-pagina">
+        <div class="grupo-1">
+            <div class="caja_footer">
+                <h1>Natura</h1>
+            </div>
+            <div class="caja_footer">
+                <h2>Sobre nosotros</h2>
+                <p>En Natura, transformamos sentimientos en arreglos florales únicos, conectando con la belleza de la naturaleza para cada ocasión especial.</p>
+            </div>
+            <div class="caja_footer">
+                <h2>Siguenos</h2>
+                <div class="red_social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; <b>2025 Natura</b> - Todos los derechos reservados</small>
+        </div>
     </footer>
 </body>
 </html>

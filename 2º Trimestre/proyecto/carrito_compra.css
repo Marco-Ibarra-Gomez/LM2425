@@ -1,3 +1,4 @@
+/* WEB */
 body{
     display: flex;
     font-size: 1.1em;
@@ -6,7 +7,6 @@ body{
     flex-direction: column;
     width: 100%;
     align-items: center;
-    height: 3200px;
     font-family: 'Lato', sans-serif;
 }
 *{
@@ -110,23 +110,16 @@ header a{
     margin-right: 10px;
 }
 .fondo {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 700px;
     overflow: hidden;
-}
-
-.fondo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8);
+    z-index: 0;
+    background-image: url(./amarillo_fondo.jpeg);
 }
 .contenedor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 15px;
@@ -162,7 +155,7 @@ header a{
     max-width: 250px;
     font-weight: bold;
     color: #2b4d3b;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 .caja:hover{
     background-color: #6fcf24;
@@ -182,7 +175,6 @@ header a{
     height: 400px;
     padding-top: 40px;
     text-align: center;
-
 }
 #presentacion h1{
     display: flex;
@@ -199,7 +191,7 @@ hr{
 }
 #articulos{
     width: 100%;
-    height: 1700px;
+    height: 1500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -234,7 +226,7 @@ hr{
     background-color:#d8f8e1;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     font-weight: bold;
     color: #2b4d3b;
 }
@@ -243,12 +235,6 @@ hr{
     cursor: pointer;
     color: white;
 }
-#pie_pagina{
-    border: 1px solid black;
-    display: flex;
-    width: 100%;
-    height: 300px;
-}
 .titulo_articulos{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -256,3 +242,206 @@ hr{
     justify-content: center;
     color: #6fcf24;
 }
+.realizar_compra{
+    width: 250px;
+    height: 80px;
+    background-color: #d8f8e1;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: large;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+.realizar_compra:hover{
+    background-color: #6fcf24;
+    cursor: pointer;
+}
+#caja_b{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+#pie-pagina{
+    width: 100%;
+    background-color: #6fcf24;
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+#pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+#pie-pagina .grupo-1 .caja_footer h1{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pie-pagina .grupo-1 .red_social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    margin-right: 10px;
+}
+#pie-pagina .grupo-1 .red_social a:hover{
+    color: #f2c94c;
+    transition: color 1.7s ease;
+    cursor: pointer;
+}
+#pie-pagina .grupo-1 .caja_footer p{
+    margin-top: 10px;
+}
+#pie-pagina .grupo-2{
+    background-color: white;
+    padding: 15px 10px;
+    text-align: center;
+    color: #6fcf24;
+}
+
+
+
+/* CARRITO DE COMPRA */
+#carrito{
+    background-color: white;
+    position: fixed;
+    top: 160px;
+    right: 30px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    overflow-y: scroll;
+    border: 1px solid grey;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#carrito_nav{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    justify-content: center;
+    line-height: 18px;
+    width: 100%;
+}
+#carrito_nav button{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color:#d8f8e1;
+    color: #2b4d3b;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+#carrito_nav button:hover{
+    background-color: #6fcf24;
+    color: white;
+    cursor: pointer;
+}
+#carrito h1{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    font-size: 18px;
+    color: #6fcf24;
+    margin-left: 18px;
+}
+#carrito hr{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#carrito .item{
+    font-size: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+    word-break: break-all;
+}
+#carrito .item h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+#carrito .item img{
+    border-radius: 20px;
+}
+#id0, #id1, #id2, #id3{
+    width: 30px;
+}
+button[id="eliminar"]{
+    text-align: center;
+    background-color: #d8f8e1;
+    color: #2b4d3b;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+button:hover[id="eliminar"]{
+    background-color: #6fcf24;
+    color: white;
+    cursor: pointer;
+}
+button[id="agregar"]{
+    text-align: center;
+    background-color: #d8f8e1;
+    color: #2b4d3b;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+button:hover[id="agregar"]{
+    background-color: #6fcf24;
+    color: white;
+    cursor: pointer;
+}
+button[id="finalizar"]{
+    text-align: center;
+    background-color: #d8f8e1;
+    color: #2b4d3b;
+    width: 180px;
+    height: 60px;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+button:hover[id="finalizar"]{
+    background-color: #6fcf24;
+    color: white;
+    cursor: pointer;
+}
+input[type="number"]{
+    background-color: white;
+    border: none;
+}
+
+
+
