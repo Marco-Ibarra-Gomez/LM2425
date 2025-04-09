@@ -1,6 +1,5 @@
 body{
     display: flex;
-    min-height: 100vh;
     font-size: 1.1em;
     background: white;
     margin: 0;
@@ -44,9 +43,12 @@ header{
     align-items: center;
     width: 100%;
     background-color: white;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     height: 100px;
     color: #6fcf24;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 header h1{
     display: flex;
@@ -82,9 +84,9 @@ header nav ul li{
     display: flex;
     justify-content: center;
 }
-header nav ul li:hover{
-    background-color: #f2c94c;
-    transition: background-color 2.5s ease;
+header nav ul li a:hover{
+    color: #f2c94c;
+    transition: color 1.7s ease;
 }
 header a{
     display: flex;
@@ -198,10 +200,10 @@ hr{
 #articulos{
     width: 100%;
     height: 1700px;
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 20px;
 }
 .flores{
     display: flex;
@@ -210,7 +212,6 @@ hr{
     font-size: small;
     width: 300px;
     height: 500px;
-    border: 1px solid black;
 }
 .flores p, h3{
     margin-top: 15px;
@@ -224,6 +225,7 @@ hr{
     justify-content: space-evenly;
     width: 20%;
     height: 100%;
+    margin-left: 50px;
 }
 .agregar{
     margin-top: 30px;
@@ -241,7 +243,16 @@ hr{
     cursor: pointer;
     color: white;
 }
-footer{
+#pie_pagina{
     border: 1px solid black;
+    display: flex;
     width: 100%;
+    height: 300px;
+}
+.titulo_articulos{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    color: #6fcf24;
 }
