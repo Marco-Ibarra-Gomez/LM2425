@@ -442,6 +442,13 @@ input[type="number"]{
     background-color: white;
     border: none;
 }
+#total_carrito{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
+    font-weight: bold;
+}
 
 
 

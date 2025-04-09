@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="carrito.css">
+<script src="carrito.js"></script>
+</head>
+<body>
+<h2>Carrito de la compra</h2>
+<div class="cajas">
+  <div class="card">
+    <img src="monitor.png" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Monitor 28"</b></h4> 
+      <p>Impresionante monitor de 28" 4K UHD con tasa de refresco de 120Hz. Ideal para los jugadores más exigentes.</p> 
+      <div class="botonera">
+      <button onclick="anadir(0)">+</button>
+      <input type="number" name="" id="id0" value="0" disabled>
+      <button onclick="quitar(0)">-</button>
+      </div>
+    </div> 
+  </div>
+  <div class="card">
+    <img src="teclado.png" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Kit Teclado-ratón Logitech</b></h4> 
+      <p>Trabaja en silencio con el Pack Teclado + Ratón Logitech MK295 de color negro y tecnología SilentTouch.
+      </p>
+      <div class="botonera">
+        <button onclick="anadir(1)">+</button>
+        <input type="number" name="" id="id1" value="0" disabled>
+        <button onclick="quitar(1)">-</button>
+      </div>
+      
+    </div> 
+  </div>
+  <div class="card">
+    <img src="raton.png" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Ratón</b></h4> 
+      <p>Estupendo ratón para oficina. Silencioso y con resolución óptica de 10000DPI.</p> 
+      <div class="botonera">
+      <button onclick="anadir(2)">+</button>
+      <input type="number" name="" id="id2" value="0" disabled>
+      <button onclick="quitar(2)">-</button>
+      </div>
+    </div> 
+  </div>
+  <div class="card">
+    <img src="grafica.png" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Tarjeta Gráfica – EVGA GeForce RTX 3090 FTW3 Ultra Gaming</b></h4> 
+      <p>La EVGA GeForce RTX 3090 es colosalmente poderosa en todos los sentidos imaginables y le brinda un nivel completamente nuevo de rendimiento con una resolución de 8K.</p> 
+      <div class="botonera">
+      <button onclick="anadir(3)">+</button>
+      <input type="number" name="" id="id3" value="0" disabled>
+      <button onclick="quitar(3)">-</button>
+      </div>
+    </div> 
+  </div>
+</div>
+<div class="container">
+  <ul id="carrito">
+  </ul>
+</div>
+<div class="centrada">
+  <p id="datos"></p>
+</div>
+<script>
+  iniciar();
+</script>
+</body>
+</html> 

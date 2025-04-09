@@ -55,7 +55,7 @@
             <h3>Tulipanes <br> Multicolor</h3>
             <div class="botonera">
                 <button onclick="quitar(0)" id="eliminar">-</button>
-                <input type="number" name="" id="id0" value="0" disabled>
+                <input type="number" name="" id="id1" value="0" disabled>
                 <button onclick="anadir(0)" id="agregar">+</button>
             </div>
         </div>
@@ -64,7 +64,7 @@
             <h3>Margaritas</h3>
             <div class="botonera">
                 <button onclick="quitar(0)" id="eliminar">-</button>
-                <input type="number" name="" id="id0" value="0" disabled>
+                <input type="number" name="" id="id2" value="0" disabled>
                 <button onclick="anadir(0)" id="agregar">+</button>
             </div>
         </div>
@@ -73,10 +73,11 @@
             <h3>Arreglo de 24 rosas</h3>
             <div class="botonera">
                 <button onclick="quitar(0)" id="eliminar">-</button>
-                <input type="number" name="" id="id0" value="0" disabled>
+                <input type="number" name="" id="id3" value="0" disabled>
                 <button onclick="anadir(0)" id="agregar">+</button>
             </div>
         </div>
+        <p id="total_carrito"></p>
         <button id="finalizar">Finalizar compra</button>
     </div>
     <div class="fondo">
@@ -110,29 +111,29 @@
             </section>
             <h1 class="titulo_articulos">Más vendidos</h1>
             <section id="articulos">
-                    <div class="flores"> <!-- En stock -->
+                    <div class="flores" id="item1"> <!-- En stock -->
                         <img src="hera.jpg" alt="Hera" width="300" height="300">
                         <h3>Hera</h3>
                         <p>La elegancia pura en cada hoja. Hera aporta un toque fresco y sofisticado, ideal para decorar cualquier espacio con estilo <b>(20€)</b></p>
-                        <button class="agregar" onclick="comprar()">Agregar al carrito</button>
+                        <button class="agregar" onclick="cambiarDisplay(0)">Agregar al carrito</button>
                     </div>
-                    <div class="flores"> <!-- En stock -->
+                    <div class="flores" id="item2"> <!-- En stock -->
                         <img src="tulipanes_multicolor.jpeg" alt="Tulipanes_multicolor" width="300" height="300">
                         <h3>Tulipanes Multicolor</h3>
                         <p>Explosión de color y alegría. Nuestro arreglo de tulipanes multicolor ilumina cualquier ambiente con su vibrante gama cromática <b>(15€)</b></p>
-                        <button class="agregar" onclick="comprar()">Agregar al carrito</button>
+                        <button class="agregar" onclick="cambiarDisplay(1)">Agregar al carrito</button>
                     </div>
-                    <div class="flores"> <!-- En stock -->
+                    <div class="flores" id="item3"> <!-- En stock -->
                         <img src="margaritas.jpg" alt="Margaritas" width="300" height="300">
                         <h3>Margaritas</h3>
                         <p>Las flores de la felicidad y la sencillez. Las margaritas transmiten ternura y frescura. Perfectas para alegrar el día a alguien especial <b>(15€)</b></p>
-                        <button class="agregar" onclick="comprar()">Agregar al carrito</button>
+                        <button class="agregar" onclick="cambiarDisplay(2)">Agregar al carrito</button>
                     </div>
-                    <div class="flores"> <!-- En stock -->
+                    <div class="flores" id="item4"> <!-- En stock -->
                         <img src="arreglo_24_rosas.jpg" alt="Arreglo_rosas" width="300" height="300">
                         <h3>Arreglo de 24 rosas</h3>
                         <p>Romántico y espectacular. Este arreglo de rosas es el símbolo perfecto del amor y la pasión, ideal para ocasiones inolvidables <b>(40€)</b></p>
-                        <button class="agregar" onclick="comprar()">Agregar al carrito</button>
+                        <button class="agregar" onclick="cambiarDisplay(3)">Agregar al carrito</button>
                     </div>
                     <div class="flores">
                         <img src="cactus.jpeg" alt="Cáctus" width="300" height="300">
