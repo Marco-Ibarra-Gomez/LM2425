@@ -30,8 +30,8 @@
             <a href="#" class="login-icon">
                 <i class="fa-brands fa-pagelines"></i> Iniciar sesión
             </a>
-            <a href="#" class="login-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+            <a class="login-icon">
+                <i onclick="aparecer()" class="fa-solid fa-cart-shopping"></i>
             </a>
         </div>
     </header>
@@ -54,27 +54,27 @@
             <img src="tulipanes_multicolor.jpeg" alt="Tulipanes_multicolor" width="100" height="100">
             <h3>Tulipanes <br> Multicolor</h3>
             <div class="botonera">
-                <button onclick="quitar(0)" id="eliminar">-</button>
+                <button onclick="quitar(1)" id="eliminar">-</button>
                 <input type="number" name="" id="id1" value="0" disabled>
-                <button onclick="anadir(0)" id="agregar">+</button>
+                <button onclick="anadir(1)" id="agregar">+</button>
             </div>
         </div>
         <div class="item" id="item3"> <!-- En stock -->
             <img src="margaritas.jpg" alt="Margaritas" width="100" height="100">
             <h3>Margaritas</h3>
             <div class="botonera">
-                <button onclick="quitar(0)" id="eliminar">-</button>
+                <button onclick="quitar(2)" id="eliminar">-</button>
                 <input type="number" name="" id="id2" value="0" disabled>
-                <button onclick="anadir(0)" id="agregar">+</button>
+                <button onclick="anadir(2)" id="agregar">+</button>
             </div>
         </div>
         <div class="item" id="item4"> <!-- En stock -->
             <img src="arreglo_24_rosas.jpg" alt="Arreglo_rosas" width="100" height="100">
             <h3>Arreglo de 24 rosas</h3>
             <div class="botonera">
-                <button onclick="quitar(0)" id="eliminar">-</button>
+                <button onclick="quitar(3)" id="eliminar">-</button>
                 <input type="number" name="" id="id3" value="0" disabled>
-                <button onclick="anadir(0)" id="agregar">+</button>
+                <button onclick="anadir(3)" id="agregar">+</button>
             </div>
         </div>
         <p id="total_carrito"></p>
@@ -166,9 +166,6 @@
                         <img src="fuera_stock.png" alt="" width="120" height="60">
                     </div>
             </section>
-            <div id="caja_b">
-                <button class="realizar_compra" onclick="realizar()">Realizar compra</button>
-            </div>
         </main>
     </div>
     <footer id="pie-pagina">
