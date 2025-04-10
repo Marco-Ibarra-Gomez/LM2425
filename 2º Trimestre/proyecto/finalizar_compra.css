@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    background-image: url(amarillo_fondo.jpeg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenido{
+    width: 100%;
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 25px;
+}
+.contenido h1{
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #6fcf24;
+    position: relative;
+}
+.campos{
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: max-height 05s;
+    overflow: hidden;
+}
+.campos i{
+    margin-right: 10px;
+    color: #6fcf24;
+}
+#nombre, #correo, #numero_tarjeta{
+    margin-right: 25px;
+}
+input{
+    width: 80%;
+    border: 0;
+    outline: none;
+    padding: 18px 15px;
+    font-weight: bold;
+}
+button{
+    background-color: #d8f8e1;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    min-width: 150px;
+    max-width: 250px;
+    font-weight: bold;
+    color: #2b4d3b;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+}
+button:hover{
+    background-color: #6fcf24;
+    color: white;
+}
+#total{
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+}

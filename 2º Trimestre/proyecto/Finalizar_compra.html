@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario compra</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/56d8a0b41b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="finalizar_compra.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenido">
+            <h1 id="titulo">Finalizar compra</h1>
+            <form action="">
+                <div class="grupo">
+                    <div class="campos">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="" id="nombre" placeholder="Inserta tu nombre">
+                    </div>
+                    <div class="campos">
+                        <input type="text" name="" id="apellidos" placeholder="Inserta tus apellidos">
+                    </div>
+                    <div class="campos">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="text" name="" id="correo" placeholder="Inserta tu correo">
+                    </div>
+                    <div class="campos">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <input type="text" name="" id="numero_tarjeta" placeholder="Inserta el número de tarjeta">
+                    </div>
+                    <div class="campos">
+                        <input type="text" name="" id="nombre_titular" placeholder="Inserta el nombre del titular">
+                    </div>
+                    <div class="campos">
+                        <input type="text" name="" id="fecha" placeholder="Inserta la fecha de caducidad">
+                    </div>
+                    <div class="campos">
+                        <input type="text" name="" id="CVC" placeholder="Inserta el CVC">
+                    </div>
+                </div>
+                <p id="total"></p>
+                <div class="boton_1">
+                    <button type="button" id="pago">Realizar pago</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("pago").addEventListener("click", function () {
+        const numeroTarjeta = document.getElementById("numero_tarjeta").value.trim();
+        const nombreTitular = document.getElementById("nombre_titular").value.trim();
+        const fecha = document.getElementById("fecha").value.trim();
+        const cvc = document.getElementById("CVC").value.trim();
+    
+        let errores = [];
+    
+        const regexTarjeta = /^[0-9]{13,19}$/;
+        if (!regexTarjeta.test(numeroTarjeta)) {
+            errores.push("Número de tarjeta inválido (debe tener entre 13 y 19 dígitos).");
+        }
+    
+        const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}$/;
+        if (!regexNombre.test(nombreTitular)) {
+            errores.push("Nombre del titular inválido (solo letras y espacios).");
+        }
+    
+        const regexFecha = /^(0[1-9]|1[0-2])\/\d{2}$/;
+        if (!regexFecha.test(fecha)) {
+            errores.push("Fecha inválida (usa el formato MM/AA).");
+        } else {
+            const [mes, anio] = fecha.split("/").map(Number);
+            const fechaActual = new Date();
+            const anioActual = parseInt(fechaActual.getFullYear().toString().slice(-2));
+            const mesActual = fechaActual.getMonth() + 1;
+    
+            if (anio < anioActual || (anio === anioActual && mes < mesActual)) {
+                errores.push("La tarjeta está caducada.");
+            }
+        }
+    
+        const regexCVC = /^[0-9]{3,4}$/;
+        if (!regexCVC.test(cvc)) {
+            errores.push("CVC inválido (debe tener 3 o 4 dígitos).");
+        }
+    
+        if (errores.length > 0) {
+            alert("Corrige los siguientes errores:\n\n" + errores.join("\n"));
+        } else {
+            alert("¡Pago realizado!");
+        }
+    });
+    </script>
+    
+</html>
