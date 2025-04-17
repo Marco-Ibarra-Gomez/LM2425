@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    <form action="">
+        <input type="text" name="tareas" id="tarea" placeholder="Añade tareas">
+    </form><br>
+    <button onclick="agregarTarea()">Añadir</button>
+    <div>
+        <ul id="listaTareas">
+
+        </ul>
+    </div>
+<script>
+    function agregarTarea(){
+        const tarea = document.getElementById("tarea").value;
+        if(tarea){
+            const lista = document.getElementById("listaTareas");
+            const nodo = document.createElement('li');
+            nodo.textContent = tarea;
+            lista.appendChild(nodo);
+
+            guardarTarea();
+        }
+    }
+
+    function guardarTarea(){
+        const tareas = [];
+        document.querySelectorAll('#listaTareas li').forEach(function(tarea) {
+            tareas.push(tarea.textContent);
+        });
+        localStorage.setItem("tareas", JSON.stringify(tareas));
+    }
+
+    function cargarTareas(){
+        const tareas = JSON.parse(localStorage.getItem("tareas"));
+        if(tareas){
+            const listaTareas = document.getElementById("listaTareas");
+            tareas.forEach(function(tarea){
+                const elemento = document.createElement('li');
+                elemento.textContent = tarea;
+                listaTareas.appendChild(elemento);
+            });
+        }
+    }
+
+    window.onload = cargarTareas;
+</script>
+</body>
+</html>
