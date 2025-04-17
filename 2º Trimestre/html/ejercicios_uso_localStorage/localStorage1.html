@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar y mostrar Nombre de usuario</title>
+</head>
+<body>
+    <h1>Formulario de usuario</h1>
+    <form action="">
+        <input style="width: 190px;" type="text" name="nombre" id="nombre_usu" placeholder="Introduce tu nombre de usuario"><br><br>
+        <button onclick="guardar_nombre()">Guardar</button>
+    </form>
+    <p id="nombre_f"></p>
+<script>
+    function guardar_nombre(){
+        let nombre = document.getElementById("nombre_usu").value;
+        if(nombre === ""){
+            alert("Por favor, introduce un nombre de usuario.");
+        }else{
+            localStorage.setItem("nombre", nombre);
+        }
+    }
+
+    function cargarNombre(){
+        let nombreGuardado = localStorage.getItem("nombre")
+        if(nombreGuardado){
+            document.getElementById("nombre_f").innerHTML = "El nombre guardado es " + nombreGuardado;
+        }else{
+            document.getElementById("nombre_f").innerHTML = "No hay ningún nombre guardado en el localStorage de la web";
+
+        }
+    }
+
+    window.onload = cargarNombre;
+</script>
+</body>
+</html>
