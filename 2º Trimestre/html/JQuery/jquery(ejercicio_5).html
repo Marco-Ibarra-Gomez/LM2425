@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1 class="encabezado">Encabezado nivel 1</h1>
+    <p class="par">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis rem voluptatem ullam omnis. In omnis, numquam aperiam itaque excepturi dolor maiores officia ducimus, deserunt possimus deleniti tenetur, et voluptas eos?</p>
+    <p class="impar">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam facere ipsum nemo repellat nostrum beatae fuga? Saepe ab, perspiciatis quaerat totam quas laudantium laborum natus inventore illum dicta? Voluptatem, sit!</p>
+    <p class="par">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas cupiditate tempore architecto quasi eaque veritatis. Dolores beatae, ullam harum pariatur eos facere reiciendis eius at, nulla labore perspiciatis ipsam itaque.</p>
+    <button id="boton1">Fade In</button>
+    <button id="boton2">Fade Out</button>
+    <button id="boton3">Toggle</button>
+    <script>
+        $(document).ready(function () {
+            $("#boton1").click(function(){
+                $("p").fadeIn(1000); // Aparecer 
+            });
+            $("#boton2").click(function(){
+                $("p").fadeOut(1000); // Desaparecer
+            });
+            $("#boton3").click(function(){
+                $("p").fadeToggle(); // Este alterna entre fadeIn y fadeOut
+            });
+        });
+    </script>
+</body>
+</html>

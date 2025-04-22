@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery 1</title>
+    <script src="jquery-3.7.1.min.js"></script> <!-- Inclusión de JQuery -->
+</head>
+<body>
+    <h1>Introducción a JQuery</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus magnam error facere perspiciatis et odio illum laboriosam, nam rem autem obcaecati iusto molestias ad possimus assumenda incidunt minus similique quos.</p>
+    <p id="segundo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum asperiores dolor aut suscipit pariatur omnis blanditiis error molestias deleniti laudantium voluptate placeat quod eos fuga perspiciatis, sunt iure doloribus illum!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore asperiores temporibus commodi ad laborum labore molestias earum? Illo, quam vel debitis vitae dolorem exercitationem ratione numquam facilis beatae fugit expedita.</p>
+    <button id="boton1">Clic aquí</button>
+    <button id="boton2">Boton 2</button>
+    <script>
+        $(document).ready(function(){ // El document.ready es para que la función se active cuando el documento esté completamente cargado
+            $("#boton").click(function(){ // Esto permite realizar una acción con los botones de la página (todos) al hacer click
+                $("p").hide(); // Esto permite ocultar los parrafos al hacer click.
+            })
+        });
+
+        $(document).ready(function () {
+            $("#boton2").click(function(){
+                $("#segundo").hide();
+            });
+        });
+
+        $(document).ready(function () { // jdocReady y jdocReadyShort son iguales, funcionan para cuando el documento está cargado
+            
+        });
+    </script>
+</body>
+</html>
