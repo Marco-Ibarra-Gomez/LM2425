@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage 5 - Cambiar configuración</title>
+    <style>
+        body{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input{
+            width: 230px;
+            margin: 5px 0;
+        }
+        button{
+            margin-top: 5px;
+            width: 180px;
+            border: none;
+            height: 35px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: white;
+            background-color: lightgrey;
+        }
+        button:hover{
+            color: white;
+            background-color: blueviolet;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aplica una configuración para la Web</h1>
+    <label for="colorconf">Asigna una configuración para la web</label><br>
+    <input type="text" name="colorconfiguracion" id="colorconf" placeholder="Inserta un color (ej: #ffffff)">
+    <input type="text" name="fuenteconfiguracion" id="fuenteconf" placeholder="Inserta tamaño de fuente (ej: 20)">
+    <button onclick="aplicar()">Aplicar configuración</button>
+    <button onclick="restablecer()">Restablecer configuración</button>
+    <script>
+        function aplicar(){
+            let configcolor = document.getElementById("colorconf").value;
+            let configfuente = parseInt(document.getElementById("fuenteconf").value);
+            const regex = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/;
+            if(!regex.test(configcolor) || isNaN(configfuente) || configfuente<=0){
+                alert("El valor introducido en el color o en el tamaño de fuente no son posibles. Intentalo de nuevo");
+                return;
+            }else{
+                const configuracion = {configcolor,configfuente};
+                localStorage.setItem("configuracion", JSON.stringify(configuracion));
+
+                guardar();
+            }
+        }
+
+        function guardar(){
+            const configuracion = JSON.parse(localStorage.getItem("configuracion"));
+            if(configuracion){
+                document.body.style.backgroundColor = configuracion.configcolor;
+                document.body.style.fontSize = configuracion.configfuente + "px";
+            }
+        }
+
+        function restablecer(){
+            localStorage.removeItem("configuracion");
+            document.body.style.backgroundColor = "";
+            document.body.style.color = "";
+        }
+
+        window.onload = guardar();
+    </script>
+</body>
+</html>
