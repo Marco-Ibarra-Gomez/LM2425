@@ -27,12 +27,13 @@
         }
 
         window.onload = function(){
-            let tiempoRecord = localStorage.getItem("tiempo");
             if(!localStorage.getItem("numeroR") || localStorage.getItem("acertado") === "true"){
                 localStorage.setItem("acertado", "false");
                 numeroRandom();
             }
-            if(localStorage.getItem("tiempo")){
+            iniciar_cronometro();
+            if(localStorage.getItem("record")){
+                let tiempoRecord = localStorage.getItem("record");
                 document.getElementById("record").innerHTML = "El record actual es de " + tiempoRecord + "s"
             }
         }
@@ -42,10 +43,11 @@
 
         function iniciar_cronometro() {
             tiempoInicio = Date.now();
-            cronometro = setInterval(function(){
-
-            }, 1000); // Cada 1 segundo
-        }
+            cronometro = setInterval(function() {
+                let tiempoTranscurrido = Math.floor((Date.now() - tiempoInicio) / 1000);
+                document.getElementById("tiempo").innerText = "El tiempo actual es de " + tiempoTranscurrido + " segundos";
+            }, 1000);
+    }
 
         function detener_cronometro() {
             clearInterval(cronometro);
@@ -59,7 +61,6 @@
                 alert("Introduce un número válido.");
                 return;
             }
-            iniciar_cronometro();
             let numeroUsuario_cifras = numeroUsuario.toString().padStart(3, "0");
             let coincidencias = 0;
             for(let i=0; i<3;i++){
@@ -76,6 +77,9 @@
                 let tiempoTranscurrido = Math.floor((tiempoFinal - tiempoInicio) / 1000);
                 document.getElementById("tiempo").innerHTML = "Has acertado en " + tiempoTranscurrido + "s";
                 localStorage.setItem("tiempo", tiempoTranscurrido);
+                if(!localStorage.getItem("record") || localStorage.getItem("record") >= tiempoTranscurrido){
+                    localStorage.setItem("record", tiempoTranscurrido);
+                }    
             }else{
                 document.getElementById("coincidencias").innerHTML = resuelto;
             }
