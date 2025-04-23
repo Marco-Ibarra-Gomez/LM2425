@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="caja">Ejercicio número 12</div>
+    <button id="mostrar_ocultar">Mostrar/Ocultar</button>
+    <p id="resultado"></p>
+    <script>
+        $(document).ready(function () {
+            let textoCaja = $("#caja").text();
+            let textovisible = true;
+            $("#mostrar_ocultar").click(function(){
+                if(textovisible === true){
+                    $("#caja").text("");
+                }else{
+                    $("#caja").text(textoCaja);
+                }
+                textovisible = !textovisible;
+            })
+        });
+    </script>
+</body>
+</html>
