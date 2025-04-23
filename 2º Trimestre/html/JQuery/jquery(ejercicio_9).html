@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Lista de enlaces</h1>
+    <ul>
+        <li><a href="">Elemento 1</a><img src="" alt="" width="50" height="50"></li>
+        <li><a href="">Elemento 2</a><img src="" alt="" width="50" height="50"></li>
+        <li><a href="">Elemento 3</a><img src="" alt="" width="50" height="50"></li>
+        <li><a href="">Elemento 4</a><img src="" alt="" width="50" height="50"></li>
+        <li><a href="">Elemento 5</a><img src="" alt="" width="50" height="50"></li>
+        <li><a href="">Elemento 6</a><img src="" alt="" width="50" height="50"></li>
+        <li><a href="">Elemento 7</a><img src="" alt="" width="50" height="50"></li>
+    </ul>
+    <script>
+        $(document).ready(function () {
+            $("img").each(function(){
+                $(this).attr("src", "descargar.jpg");
+            })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Titulo 1</h1>
+    <p>parrafo 2</p>
+    <p>parrafo 3</p>
+    <img src="https://picsum.photos/200" alt="">
+    <img src="https://picsum.photos/200" alt="">
+    <img src="https://picsum.photos/200" alt="">
+    <a href="https://www.google.com"></a>
+    <a href="https://www.google.com"></a>
+    <a href="https://www.google.com"></a>
+    <a href="https://www.google.com"></a>    
+    <a href="https://www.google.com"></a>
+    <script>
+        function elementoExiste(selector){ // El selector se usa para llamar las diferentes etiquetas. En caso de querer usar la función tengo que ponerlo de la siguiente manera -> elementoExiste("nombre_etiqueta"). Si pongo el nombre sin las comillas o pongo también el "function" no funcionará.
+            if($(selector).length>0){
+                console.log("El elemento que estas buscando existe");
+            }else{
+                console.log("El elemento no existe");
+            }
+        }
+    </script>
+</body>
+</html>

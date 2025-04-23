@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <h1>Ejemplo <span>de encabezado</span></h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet repellat vero ipsam, non quis tempore similique nulla numquam eum tempora, doloribus animi possimus ipsa fugiat nemo ratione? Deleniti, praesentium possimus!</p>
+    <img src="https://picsum.photos/200" alt="">
+    <button id="btn1">Mostrar encabezado</button>
+    <button id="btn2">Mostrar párrafo</button>
+    <button id="btn3">Mostrar imágen</button>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                alert("Encabezado: " + $("h1").html()); // Con este obtengo el código html de h1
+            });
+
+            $("#btn2").click(function(){
+                alert("Párrafo: " + $("p").text()); // Con este obtengo el texto de un parrafo o un objeto
+            });
+
+            $("#btn3").click(function(){
+                alert("Imagen: " + $("img").attr("src")); // Con attr se obtiene el src si pongo "src"
+            });
+        });
+    </script>
+</body>
+</html>
