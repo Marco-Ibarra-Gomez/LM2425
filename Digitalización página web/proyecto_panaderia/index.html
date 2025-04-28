@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Deliciosa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Encabezado -->
+        <h1 class="text-center mb-4">Panadería Deliciosa</h1>
+        
+        <!-- Sección con Imágenes -->
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1603052879905-d3fe42fd3609" class="img-fluid rounded" alt="Pan de Chocolate">
+                <h5 class="text-center mt-2">Pan de Chocolate</h5>
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1561076855-1d2d00e7cde6" class="img-fluid rounded" alt="Baguette">
+                <h5 class="text-center mt-2">Baguette</h5>
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1561076853-b3ebd99f7f58" class="img-fluid rounded" alt="Croissant">
+                <h5 class="text-center mt-2">Croissant</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Realizar Pedido</h3>
+                <form id="pedidoForm">
+                    <div class="mb-3">
+                        <label for="producto" class="form-label">Producto</label>
+                        <select id="producto" class="form-select">
+                            <option value="Pan de Chocolate">Pan de Chocolate</option>
+                            <option value="Baguette">Baguette</option>
+                            <option value="Croissant">Croissant</option>
+                            <option value="Pastelito">Pastelito</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <input type="number" id="cantidad" class="form-control" value="1" min="1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Añadir al Carrito</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Carrito de Compras</h3>
+                <ul id="carrito" class="list-group">
+                    <!-- Aquí se mostrarán los productos del carrito -->
+                </ul>
+                <button id="vaciarCarrito" class="btn btn-danger mt-3">Vaciar Carrito</button>
+                <button id="realizarPedido" class="btn btn-success mt-3">Realizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

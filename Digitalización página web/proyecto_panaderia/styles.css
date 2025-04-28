@@ -1,0 +1,122 @@
+/* Estilo general del cuerpo */
+body {
+    background-color: #FFF6E5;  /* Un tono suave, cálido */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Títulos */
+h1 {
+    color: #C57D3B;  /* Color cálido, parecido al pan recién horneado */
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Formulario y Carrito */
+.container {
+    background-color: #FFF;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+/* Caja de producto */
+select, input {
+    border: 2px solid #C57D3B;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.1rem;
+    width: 100%;
+    background-color: #F8D7A1;  /* Color dorado claro */
+    transition: 0.3s;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #8E5C29;
+    background-color: #F4E1A1;  /* Cambio de color al hacer foco */
+}
+
+/* Botones */
+button {
+    background-color: #C57D3B;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #8E5C29;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Estilo del carrito */
+#carrito {
+    background-color: #FFFAF0;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#carrito .list-group-item {
+    background-color: #FFF5D7;  /* Color suave para cada item */
+    border: 1px solid #E5D7A1;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botón de eliminar en el carrito */
+#carrito button {
+    background-color: #D9534F;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#carrito button:hover {
+    background-color: #C9302C;
+}
+
+/* Estilos de los botones de acción (vaciar carrito y realizar pedido) */
+#vaciarCarrito, #realizarPedido {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+/* Diseño del footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #C57D3B;
+    font-weight: bold;
+}
+
+/* Estilo para los elementos de la lista de productos en el carrito */
+.list-group-item button {
+    background-color: #FFB84D;
+    border-color: #E6993A;
+}
+
+.list-group-item button:hover {
+    background-color: #E68A3F;
+    border-color: #E68A3F;
+}
