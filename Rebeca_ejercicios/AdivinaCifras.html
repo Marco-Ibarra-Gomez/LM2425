@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina Cifras</title>
+</head>
+<body>
+    <h1>¡Adivina el número en tiempo record!</h1>
+    <p>He pensado en un número de tres cifras...</p>
+    <p id="record"></p>
+    <p id="tiempo"></p>
+    <p id="coincidencias"></p>
+    <input type="text" name="number" id="numero" placeholder="Escribe un número">
+    <button onclick="comprobar()">Comprueba</button>
+    <script>
+        function numeroRandom(){
+            if(localStorage.getItem("acertado")==="true"){
+                document.getElementById("coincidencias").innerHTML="Has acertado! Reinicia la página para generar un nuevo número";
+            } else {
+                let numeroR = Math.floor(Math.random()*1000)
+                localStorage.setItem("numeroR", numeroR);
+                localStorage.setItem("acertado", "false");
+            }
+        }
+        window.onload = function(){
+            if(!localStorage.getItem("numeroR") || localStorage.getItem("acertado") === "true"){
+                localStorage.setItem("acertado", "false");
+            numeroRandom();
+            }
+            iniciar_cronometro();
+            if(localStorage.getItem("record")){
+                let tiempoRecord = localStorage.getItem("record");
+                document.getElementById("record").innerHTML ="El record actual es de" + tiempoRecord + "s";            }
+        }
+        let tiempoInicio;
+        let cronometro;
+        function iniciar_cronometro(){
+            tiempoInicio = Date.now();
+            cronometro = setInterval(function() {
+            let tiempoTranscurrido = Math.floor((Date.now() - tiempoInicio)/1000);
+            innerHTML.getElementById("tiempo").innerText = "El tiempo actual es de " + tiempoTranscurrido + "segundos";
+            }, 1000);
+        }
+        function detener_cronometro(){
+            clearInterval(cronometro);
+        }
+        function comprobar(){
+            let numeroR = localStorage.getItem("numeroR");
+            let numero_cifras = numeroR.toString().padStart(3, "0");
+            let numeroUsuario = document.getElementById("numero").value;
+            if(isNaN(numeroUsuario) || !Number.isInteger(Number(numeroUsuario)) || Number(numeroUsuario)<0 || Number(numeroUsuario) > 999){
+                alert("Introduce un número válido.");
+                return;
+            }
+            let numeroUsuario_cifras = numeroUsuario.toString().padStart(3, "0");
+            let coincidencias = 0;
+            for (let i=0; i<3; i++){
+                if(numeroR_cifras[i]===numeroUsuario_cifras[i]){
+                    coincidencias++;
+                }
+            }
+        }
+        let resuelto ="Has adivinado" + coincidencias + "cifras";
+        if(resuelto === "Has adivinado" + 3 + "cifras"){
+            localStorage.setItem("acertado", "true");
+            numeroRandom();
+            detener_cronometro();
+            let tiempoFinal = Date.now();
+            let tiempoTranscurrido = Math.floor((tiempoFinal-tiempoInicio)/1000);
+            document.getElementById("tiempo").innerHTML=
+            "Has acertado en " + tiempoTranscurrido + "s";
+            localStorage.setItem("tiempo", tiempoTranscurrido);
+            if(!localStorage.getItem("record") || localStorage.getItem("record") >= tiempoTranscurrido){
+                localStorage.setItem("record", tiempoTranscurrido);
+            } else {
+                document.getElementById("coincidencias").innerHTML=resuelto;
+            }
+        }
+    </script>
+</body>
+</html>
