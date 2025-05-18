@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Información de Sevici</title>
+    <link rel="stylesheet" href="sevici.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Información de Sevici</h1>
+        <div class="buttons">
+            <button id="numStations">Calcular número de estaciones disponibles</button>
+            <button id="totalBikes">Mostrar total de bicicletas</button>
+            <button id="totalFree">Mostrar total de sitios libres</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <!-- Código de jQuery debajo-->
+    <script>
+        $(document).ready(function () {
+             $.getJSON("https://api.citybik.es/sevici.json", function(data){
+                $("#numStations").on("click", function(){
+                    $("#result").text("Número de estaciones disponibles: "+ data.length);
+                });
+                $("#totalBikes").on("click", function(){
+                    let total = 0;
+                    for(let i = 0; i < data.length; i++){
+                        total += data[i].bikes;
+                    }
+                    $("#result").text("Número total de bicicletas: "+ total);                    
+                });
+                $("#totalFree").on("click", function(){
+                    let total = 0;
+                    for(let i = 0; i < data.length; i++){
+                        total += data[i].free;
+                    }
+                    $("#result").text("Número total de sitios libres: "+ total);                    
+                })
+             });
+        });
+    </script>
+</body>
+</html>
