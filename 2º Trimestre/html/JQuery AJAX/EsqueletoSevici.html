@@ -19,7 +19,7 @@
     <!-- Código de jQuery debajo-->
     <script>
         $(document).ready(function () {
-             $.getJSON("https://api.citybik.es/sevici.json", function(data){
+             $.getJSON("https://api.citybik.es/sevici.json", function(data){ // Se usa getJSON para obtener los datos de una API
                 $("#numStations").on("click", function(){
                     $("#result").text("Número de estaciones disponibles: "+ data.length);
                 });
