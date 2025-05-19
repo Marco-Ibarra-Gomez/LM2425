@@ -137,83 +137,89 @@
         const dni = document.getElementById("dni");
         const preferencia1 = document.getElementById("preferencia1");
         const preferencia2 = document.getElementById("preferencia2");
+        const frecuencia = document.getElementById("frecuenciaEnvio");
         const terminos = document.getElementById("terminos");
 
         // Validación de nombre
         if (nombre.value === "") 
         {
-            mostrarError("errorNombreCompleto", "El nombre no puede estar vacío");
+            mostrarError("errorNombreCompleto");
         } 
         else 
         {
             ocultarError("errorNombreCompleto");
         }
-
-        // Validación de apellidos
-        if (apellidos.value === "") 
-        {
-            mostrarError("error-apellidos", "Los apellidos no pueden estar vacíos");
-        } 
-        else 
-        {
-            ocultarError("error-apellidos");
-        }
-
-        // Validación de teléfono
-        if (telefono.value.length !== 10 || isNaN(telefono.value)) 
-        {
-            mostrarError("error-telefono", "El teléfono debe tener 10 dígitos numéricos");
-        }
-        else 
-        {
-            ocultarError("error-telefono");
-        }
-
+       
         // Validación de email
         if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1)
         {
-            mostrarError("error-email", "Por favor ingrese un correo electrónico válido");
+            mostrarError("errorCorreoElectronico");
         }
         else
         {
-            ocultarError("error-email");
+            ocultarError("errorCorreoElectronico");
         }
 
-        // Validación de contraseñas
-        if (contrasena1.value === "" || contrasena1.value !== contrasena2.value)
+        // Validación de dni
+        function validar(){
+            var letra = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+            var dni = document.getElementById("dni").value;
+            var numero = parseInt(dni.substring(0, 8));
+            var letraU = dni[8];
+            var letraR = letra[numero%23];
+            var dni_verdadero = true;
+            if(letraU!=letraR || dni == ""){
+                dni_verdadero = false;
+                mostrarError("errorDNI");
+            }else{
+                ocultarError("errorDNI");
+            }
+        }
+
+        validar();
+       
+        // Validación de preferencia
+        if (preferencia1.checked === false && preferencia2.checked === false)
         {
-            mostrarError("error-contrasena1", "Las contraseñas no coinciden");
-            mostrarError("error-contrasena2", "Las contraseñas no coinciden");
+            mostrarError("errorPreferencias");
         }
         else
         {
-            ocultarError("error-contrasena1");
-            ocultarError("error-contrasena2");
+            ocultarError("errorPreferencias");
+        }
+
+
+        // Validación de frecuencia de envío
+        if (frecuencia.value === "")
+        {
+            mostrarError("errorFrecuenciaEnvio");
+        }
+        else
+        {
+            ocultarError("errorFrecuenciaEnvio");
         }
 
         // Validación de términos
         if (terminos.checked === false)
         {
-            mostrarError("error-terminos", "Debe aceptar los términos y condiciones");
+            mostrarError("errorTerminos");
         }
         else
         {
-            ocultarError("error-terminos");
+            ocultarError("errorTerminos");
         }
     });
 
     // Función para mostrar errores
-    function mostrarError(id, mensaje) {
+    function mostrarError(id){
         const campoError = document.getElementById(id);
-        campoError.innerText = mensaje;
-        campoError.classList.add("activo");
+        campoError.style.visibility='visible';
     }
 
     // Función para ocultar errores
-    function ocultarError(id) {
-        const campoError = document.getElementById(id);
-        campoError.innerText = "";
-        campoError.classList.remove("activo");
+    function ocultarError(id){
+      const campoError = document.getElementById(id);
+      campoError.style.visibility='hidden';
     }
 });
 
